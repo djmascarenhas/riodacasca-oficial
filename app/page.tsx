@@ -1,7 +1,7 @@
 const themes = [
   { number: "01", title: "História e memória", text: "Documentos, relatos e acontecimentos que atravessam gerações.", href: "/historia" },
   { number: "02", title: "Natureza e território", text: "O rio, as cachoeiras, o cerrado e as paisagens que formam este lugar.", href: "/territorio" },
-  { number: "03", title: "Pessoas e comunidade", text: "Vozes, fotografias e saberes das famílias do Rio da Casca.", href: "#comunidade" },
+  { number: "03", title: "Pessoas e comunidade", text: "Vozes, fotografias e saberes das famílias do Rio da Casca.", href: "/comunidade" },
 ];
 
 const timeline = [
@@ -20,7 +20,7 @@ export default function Home() {
           <span>Rio da Casca<small>memória do território</small></span>
         </a>
         <nav aria-label="Navegação principal">
-          <a href="/historia">História</a><a href="/territorio">Território</a><a href="#comunidade">Comunidade</a><a href="#acervo">Acervo</a>
+          <a href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="#acervo">Acervo</a>
         </nav>
         <a className="menu-link" href="#acervo">Explorar acervo <span>↗</span></a>
       </header>

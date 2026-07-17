@@ -20,9 +20,9 @@ export default function Home() {
           <span>Rio da Casca<small>memória do território</small></span>
         </a>
         <nav aria-label="Navegação principal">
-          <a href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="#acervo">Acervo</a>
+          <a href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a>
         </nav>
-        <a className="menu-link" href="#acervo">Explorar acervo <span>↗</span></a>
+        <a className="menu-link" href="/acervo">Explorar acervo <span>↗</span></a>
       </header>
 
       <section className="hero" id="inicio">
@@ -34,7 +34,7 @@ export default function Home() {
           <p className="eyebrow">Chapada dos Guimarães · Mato Grosso</p>
           <h1>Onde a água passa,<br/><em>a história fica.</em></h1>
           <p className="lead">Um lugar para reconhecer as pessoas, as paisagens e os acontecimentos que fizeram do Rio da Casca um território singular.</p>
-          <div className="hero-actions"><a className="button" href="#acervo">Conheça o acervo</a><a className="text-link" href="/historia">Percorra a história <span>→</span></a></div>
+          <div className="hero-actions"><a className="button" href="/acervo">Conheça o acervo</a><a className="text-link" href="/historia">Percorra a história <span>→</span></a></div>
         </div>
       </section>
 

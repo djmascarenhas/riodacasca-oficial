@@ -27,7 +27,7 @@ export default function Territorio() {
     <main>
       <header className="topbar territory-topbar">
         <a className="brand" href="/" aria-label="Rio da Casca — início"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></a>
-        <nav aria-label="Navegação principal"><a href="/historia">História</a><a className="active" href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/#acervo">Acervo</a></nav>
+        <nav aria-label="Navegação principal"><a href="/historia">História</a><a className="active" href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a></nav>
         <a className="menu-link" href="/">Voltar ao início <span>↗</span></a>
       </header>
 

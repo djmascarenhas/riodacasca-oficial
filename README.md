@@ -25,7 +25,8 @@ O projeto será conectado ao GitHub pelo recurso **Node.js Web App** da Hostinge
 - Branch de produção: `main`
 - Gerenciador: `npm`
 - Node.js: `22`
-- Build: `npm run build`
+- Framework: `Next.js`
+- Build: `npm run build` (gera `.next`)
 - Inicialização: `npm run start`
 - Endereço final: `https://riodacasca.chapada.ia.br`
 

@@ -1,0 +1,36 @@
+# Rio da Casca Oficial
+
+Portal editorial e comunitário dedicado à história, ao território e às pessoas do Rio da Casca, em Chapada dos Guimarães, Mato Grosso.
+
+## Desenvolvimento
+
+Requer Node.js 22.13 ou superior.
+
+```bash
+npm install
+npm run dev
+```
+
+## Validação
+
+```bash
+npm run build
+```
+
+## Implantação na Hostinger
+
+O projeto será conectado ao GitHub pelo recurso **Node.js Web App** da Hostinger.
+
+- Repositório: `djmascarenhas/riodacasca-oficial`
+- Branch de produção: `main`
+- Gerenciador: `npm`
+- Node.js: `22`
+- Build: `npm run build`
+- Inicialização: `npm run start`
+- Endereço final: `https://riodacasca.chapada.ia.br`
+
+No hPanel, selecione **Websites → Add website → Node.js Web App → Import Git Repository**. Conecte o repositório e confirme os comandos acima.
+
+Depois da primeira implantação, conecte o domínio personalizado `riodacasca.chapada.ia.br`. Caso a zona DNS de `chapada.ia.br` esteja fora da Hostinger, crie no provedor de DNS o registro solicitado pelo hPanel.
+
+Não adicione senhas, tokens ou arquivos `.env` ao repositório. Variáveis de produção devem ser cadastradas diretamente na Hostinger.

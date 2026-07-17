@@ -1,14 +1,14 @@
 const themes = [
-  { number: "01", title: "História e memória", text: "Documentos, relatos e acontecimentos que atravessam gerações.", href: "#historia" },
+  { number: "01", title: "História e memória", text: "Documentos, relatos e acontecimentos que atravessam gerações.", href: "/historia" },
   { number: "02", title: "Natureza e território", text: "O rio, as cachoeiras, o cerrado e as paisagens que formam este lugar.", href: "#territorio" },
   { number: "03", title: "Pessoas e comunidade", text: "Vozes, fotografias e saberes das famílias do Rio da Casca.", href: "#comunidade" },
 ];
 
 const timeline = [
-  ["1781", "Registros do Engenho de São Romão no território do Rio da Casca."],
-  ["Século XIX", "Caminhos, fazendas e comunidades passam a compor a paisagem cultural da região."],
-  ["Século XX", "A energia, as estradas e novas atividades transformam a vida local."],
-  ["Hoje", "A comunidade preserva memórias e discute novos caminhos para o território."],
+  ["1928", "Entra em operação a primeira usina hidrelétrica de Mato Grosso, aproveitando as águas do Rio da Casca."],
+  ["1970", "A Usina Rio da Casca III passa a operar e amplia a presença do território na história da energia estadual."],
+  ["1994", "É criada a Estação Ecológica do Rio da Casca, reunindo dois perímetros de proteção permanente."],
+  ["Hoje", "O distrito reúne memória, natureza, comunidades e novos caminhos para o turismo responsável."],
 ];
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
           <span>Rio da Casca<small>memória do território</small></span>
         </a>
         <nav aria-label="Navegação principal">
-          <a href="#historia">História</a><a href="#territorio">Território</a><a href="#comunidade">Comunidade</a><a href="#acervo">Acervo</a>
+          <a href="/historia">História</a><a href="#territorio">Território</a><a href="#comunidade">Comunidade</a><a href="#acervo">Acervo</a>
         </nav>
         <a className="menu-link" href="#acervo">Explorar acervo <span>↗</span></a>
       </header>
@@ -34,7 +34,7 @@ export default function Home() {
           <p className="eyebrow">Chapada dos Guimarães · Mato Grosso</p>
           <h1>Onde a água passa,<br/><em>a história fica.</em></h1>
           <p className="lead">Um lugar para reconhecer as pessoas, as paisagens e os acontecimentos que fizeram do Rio da Casca um território singular.</p>
-          <div className="hero-actions"><a className="button" href="#acervo">Conheça o acervo</a><a className="text-link" href="#historia">Percorra a história <span>↓</span></a></div>
+          <div className="hero-actions"><a className="button" href="#acervo">Conheça o acervo</a><a className="text-link" href="/historia">Percorra a história <span>→</span></a></div>
         </div>
       </section>
 
@@ -50,7 +50,7 @@ export default function Home() {
 
       <section className="history" id="acervo">
         <div className="history-heading"><p className="section-index">02 — Linha do tempo</p><h2>Marcos de uma história em movimento.</h2><p>Uma primeira leitura do território. As datas e narrativas serão ampliadas a partir de fontes, documentos e relatos da comunidade.</p></div>
-        <div className="timeline">{timeline.map(([year,text]) => <article key={year}><strong>{year}</strong><p>{text}</p></article>)}</div>
+        <div className="timeline">{timeline.map(([year,text]) => <article key={year}><strong>{year}</strong><p>{text}</p></article>)}<a className="timeline-more" href="/historia">Ver linha do tempo completa <span>→</span></a></div>
       </section>
 
       <section className="community" id="comunidade">

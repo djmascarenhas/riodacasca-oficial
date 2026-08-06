@@ -1,0 +1,64 @@
+.territory-archive {
+  padding: 110px 7%;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 9%;
+  background: var(--paper);
+}
+
+.territory-archive h2 {
+  margin: 0;
+  font-size: clamp(48px, 5.4vw, 84px);
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.territory-archive > div:first-child > p:last-child {
+  margin-top: 30px;
+  font: 400 17px/1.7 var(--font-serif);
+}
+
+.territory-archive-links {
+  border-top: 1px solid #17241d40;
+}
+
+.territory-archive-links a {
+  display: grid;
+  grid-template-columns: 130px 1fr 30px;
+  gap: 20px;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #17241d40;
+}
+
+.territory-archive-links span {
+  color: var(--rust);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.territory-archive-links strong {
+  font: 400 clamp(24px, 2.6vw, 38px)/1.05 var(--font-serif);
+}
+
+.territory-archive-links b {
+  color: var(--rust);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media (max-width: 850px) {
+  .territory-archive {
+    grid-template-columns: 1fr;
+    padding: 80px 7%;
+  }
+
+  .territory-archive-links a {
+    grid-template-columns: 1fr 28px;
+  }
+
+  .territory-archive-links span {
+    grid-column: 1 / -1;
+  }
+}

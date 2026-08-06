@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../history-collections.css";
 export const metadata: Metadata = {
   title: "História",
   description: "Linha do tempo documentada da história do Rio da Casca, em Chapada dos Guimarães.",

@@ -1,0 +1,64 @@
+.history-collections {
+  padding: 115px 7%;
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  gap: 10%;
+  background: var(--white);
+}
+
+.collections-heading h2 {
+  margin: 0;
+  font-size: clamp(48px, 5.4vw, 84px);
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.collections-heading > p:last-child {
+  margin-top: 30px;
+  font: 400 17px/1.7 var(--font-serif);
+}
+
+.collection-list {
+  border-top: 1px solid #17241d40;
+}
+
+.collection-list a {
+  display: grid;
+  grid-template-columns: 42px 1fr 30px;
+  gap: 20px;
+  padding: 36px 0;
+  border-bottom: 1px solid #17241d40;
+}
+
+.collection-list a > span,
+.collection-list small {
+  color: #17241d80;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.collection-list h3 {
+  margin: 12px 0 10px;
+  font-size: clamp(30px, 3vw, 48px);
+}
+
+.collection-list p {
+  max-width: 650px;
+  margin: 0;
+  font: 400 15px/1.65 var(--font-serif);
+}
+
+.collection-list b {
+  align-self: center;
+  color: var(--rust);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+@media (max-width: 850px) {
+  .history-collections {
+    grid-template-columns: 1fr;
+    padding: 80px 7%;
+  }
+}

@@ -29,8 +29,8 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-image">
-          <Image src="https://riodacasca.com.br/wd/wp-content/uploads/2018/01/ponte03-850x450.jpg" alt="Ponte sobre o Rio da Casca cercada pela vegetação" fill priority sizes="(max-width: 850px) 100vw, 54vw" />
-          <p>Ponte do Casca · Acervo Rio da Casca</p>
+          <Image src="/acervo/legado/ponte-do-casca.jpg" alt="Ponte sobre o Rio da Casca cercada pela vegetação" fill priority sizes="(max-width: 850px) 100vw, 54vw" />
+          <p>Ponte do Casca · Acervo legado · autoria em identificação</p>
         </div>
         <div className="hero-copy">
           <p className="eyebrow">Chapada dos Guimarães · Mato Grosso</p>

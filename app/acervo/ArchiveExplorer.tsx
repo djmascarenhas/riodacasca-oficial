@@ -9,7 +9,7 @@ export default function ArchiveExplorer() {
   const normalizedQuery = query.trim().toLocaleLowerCase("pt-BR");
   const records = useMemo(() => archiveRecords.filter((record) => {
     const categoryMatches = category === "Todos" || record.category === category;
-    const queryMatches = !normalizedQuery || [record.title, record.summary, record.type, record.year, record.location]
+    const queryMatches = !normalizedQuery || [record.title, record.summary, record.type, record.year, record.location, record.collection, record.source]
       .join(" ")
       .toLocaleLowerCase("pt-BR")
       .includes(normalizedQuery);

@@ -1,16 +1,18 @@
 export type ArchiveRecord = {
   slug: string;
   code: string;
-  type: "Fotografia" | "Documento" | "Localização" | "Evento" | "Comunidade";
-  category: "Fotografias" | "Documentos" | "Mapas" | "Eventos" | "Relatos";
+  type: "Fotografia" | "Documento" | "Localização" | "Evento" | "Comunidade" | "Artigo histórico";
+  category: "Fotografias" | "Documentos" | "Mapas" | "Eventos" | "Relatos" | "Artigos";
   year: string;
   title: string;
   summary: string;
   source: string;
   sourceUrl: string;
   location: string;
-  status: "Fonte institucional" | "Em pesquisa";
+  status: "Fonte institucional" | "Em pesquisa" | "Acervo legado — em revisão";
   reviewedAt: string;
+  collection?: "Patrimônio da energia" | "História do território" | "Natureza e conservação";
+  image?: { src: string; alt: string; credit: string };
 };
 
 export const archiveRecords: ArchiveRecord[] = [
@@ -98,6 +100,130 @@ export const archiveRecords: ArchiveRecord[] = [
     status: "Fonte institucional",
     reviewedAt: "6 de agosto de 2026",
   },
+  {
+    slug: "inauguracao-usina-casca-ii",
+    code: "LEG-001",
+    type: "Artigo histórico",
+    category: "Artigos",
+    year: "1954",
+    title: "Inauguração da Usina Casca II",
+    summary: "Registro do acervo histórico sobre a inauguração da Usina Casca II. A data, as pessoas retratadas e o contexto serão conferidos antes da edição definitiva.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/1954/01/04/inauguracao-da-usina-casca-ii/",
+    location: "Rio da Casca, Chapada dos Guimarães — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "Patrimônio da energia",
+    image: { src: "/acervo/legado/usina-casca-ii.jpg", alt: "Registro histórico associado à inauguração da Usina Casca II", credit: "Acervo legado Rio da Casca — autoria em identificação" },
+  },
+  {
+    slug: "ponte-do-casca-acervo-legado",
+    code: "LEG-002",
+    type: "Fotografia",
+    category: "Fotografias",
+    year: "Data em pesquisa",
+    title: "Ponte do Casca",
+    summary: "Fotografia da ponte sobre o Rio da Casca preservada no portal anterior. Data, autoria e circunstâncias do registro ainda serão identificadas.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/2019/04/04/ponte-do-casca-l/",
+    location: "Rio da Casca, Chapada dos Guimarães — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "História do território",
+    image: { src: "/acervo/legado/ponte-do-casca.jpg", alt: "Ponte sobre o Rio da Casca cercada pela vegetação", credit: "Acervo legado Rio da Casca — autoria em identificação" },
+  },
+  {
+    slug: "hidraulica-do-porto-e-hidreletrica",
+    code: "LEG-003",
+    type: "Artigo histórico",
+    category: "Artigos",
+    year: "Século XX",
+    title: "A Hidráulica do Porto e a Hidrelétrica do Rio da Casca",
+    summary: "Texto do acervo anterior sobre a chegada da eletricidade e a relação do complexo do Rio da Casca com Cuiabá.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/2019/08/08/o-conforto-da-luz-eletrica-a-hidraulica-do-porto-e-hidroeletrica-do-rio-da-casca/",
+    location: "Rio da Casca e Cuiabá — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "Patrimônio da energia",
+    image: { src: "/acervo/legado/hidreletrica-rio-da-casca.jpg", alt: "Estrutura histórica da hidrelétrica do Rio da Casca", credit: "Acervo legado Rio da Casca — autoria em identificação" },
+  },
+  {
+    slug: "engenho-sao-romao-1781",
+    code: "LEG-004",
+    type: "Artigo histórico",
+    category: "Artigos",
+    year: "1781",
+    title: "Engenho de São Romão no Rio da Casca",
+    summary: "Texto atribuído à professora Maria Amélia Assis Alves Crivelente sobre um engenho no Rio da Casca em 1781, incorporado como pista documental para pesquisa.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/2017/05/09/engenho-sao-romao-em-1781/",
+    location: "Rio da Casca — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "História do território",
+  },
+  {
+    slug: "ligacao-rio-da-casca-cuiaba",
+    code: "LEG-005",
+    type: "Artigo histórico",
+    category: "Artigos",
+    year: "Período em pesquisa",
+    title: "A ligação do Rio da Casca com Cuiabá",
+    summary: "Narrativa do portal anterior sobre caminhos, infraestrutura e relações históricas entre o Rio da Casca e a capital mato-grossense.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/2017/01/02/a-ligacao-do-rio-da-casca-com-cuiaba/",
+    location: "Rio da Casca e Cuiabá — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "História do território",
+  },
+  {
+    slug: "tombamento-cachoeiras-martinha",
+    code: "LEG-006",
+    type: "Documento",
+    category: "Documentos",
+    year: "Data em pesquisa",
+    title: "Tombamento das Cachoeiras da Martinha",
+    summary: "Referência existente no acervo anterior sobre a proteção das Cachoeiras da Martinha, mantida em pesquisa até a localização do ato oficial correspondente.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/2017/06/20/tombamento-das-cachoeiras-da-martinha/",
+    location: "Cachoeiras da Martinha, Chapada dos Guimarães — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "Natureza e conservação",
+  },
+  {
+    slug: "andorinhoes-rio-da-casca",
+    code: "LEG-007",
+    type: "Artigo histórico",
+    category: "Artigos",
+    year: "2023",
+    title: "Os andorinhões do Rio da Casca",
+    summary: "Registro sobre aves que utilizam paredões, cavernas e áreas próximas a cachoeiras, preservado como ponto de partida para uma pauta de biodiversidade.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/2023/01/31/os-nossos-andorinhoes-onde-estao/",
+    location: "Rio da Casca, Chapada dos Guimarães — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "Natureza e conservação",
+    image: { src: "/acervo/legado/andorinhoes.jpg", alt: "Andorinhões em formação rochosa próxima a uma queda d'água", credit: "Acervo legado Rio da Casca — autoria em identificação" },
+  },
+  {
+    slug: "transbordamento-rio-da-casca-2016",
+    code: "LEG-008",
+    type: "Evento",
+    category: "Eventos",
+    year: "2016",
+    title: "Transbordamento do Rio da Casca",
+    summary: "Registro de um transbordamento ocorrido em janeiro de 2016, útil para documentar memória ambiental, cheias e transformações da paisagem.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/2018/01/24/rio-da-casca-em-chapada-dos-guimaraes-transbordou-nesta-sexta-feira-30-01-2016/",
+    location: "Rio da Casca, Chapada dos Guimarães — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "Natureza e conservação",
+  },
 ];
 
-export const archiveCategories = ["Todos", "Fotografias", "Documentos", "Mapas", "Eventos", "Relatos"] as const;
+export const archiveCategories = ["Todos", "Fotografias", "Documentos", "Artigos", "Mapas", "Eventos", "Relatos"] as const;

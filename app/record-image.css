@@ -1,0 +1,21 @@
+.record-image {
+  max-width: 1100px;
+  margin: 52px 0 45px;
+}
+
+.record-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: cover;
+  background: var(--paper);
+}
+
+.record-image figcaption {
+  margin-top: 10px;
+  color: #17241d99;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}

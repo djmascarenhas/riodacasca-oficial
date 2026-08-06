@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../record-image.css";
 
 export const metadata: Metadata = {
   title: "Acervo digital",

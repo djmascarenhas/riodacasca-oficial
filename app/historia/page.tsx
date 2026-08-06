@@ -6,6 +6,12 @@ const milestones = [
   { year: "Hoje", title: "Um patrimônio em construção", text: "O Rio da Casca segue reunindo comunidades, paisagens, patrimônio energético e iniciativas de conservação. O portal nasce para tornar essas histórias mais visíveis e acessíveis.", status: "Arquivo vivo" },
 ];
 
+const collections = [
+  { number: "01", title: "Patrimônio da energia", text: "Usinas, infraestrutura e as águas que ajudaram a transformar a história da eletricidade em Mato Grosso.", href: "/acervo/inauguracao-usina-casca-ii", count: "3 registros iniciais" },
+  { number: "02", title: "História do território", text: "Caminhos, engenhos, pontes e relações entre o Rio da Casca, Serra-Acima e Cuiabá.", href: "/acervo/engenho-sao-romao-1781", count: "3 registros iniciais" },
+  { number: "03", title: "Natureza e conservação", text: "Cachoeiras, aves, cheias e documentos relacionados à proteção das paisagens do Rio da Casca.", href: "/acervo/andorinhoes-rio-da-casca", count: "4 registros iniciais" },
+];
+
 export default function Historia() {
   return (
     <main>
@@ -29,6 +35,8 @@ export default function Historia() {
           </article>
         ))}
       </section>
+
+      <section className="history-collections" aria-labelledby="collections-title"><div className="collections-heading"><p className="section-index">Coleções em formação</p><h2 id="collections-title">O acervo antigo começa uma nova vida.</h2><p>O primeiro lote foi organizado em três frentes de pesquisa. Os registros preservam a origem do material e indicam claramente o que ainda precisa ser confirmado.</p></div><div className="collection-list">{collections.map((collection) => <a href={collection.href} key={collection.number}><span>{collection.number}</span><div><small>{collection.count}</small><h3>{collection.title}</h3><p>{collection.text}</p></div><b>→</b></a>)}</div></section>
 
       <section className="history-callout"><p className="section-index">Acervo comunitário</p><h2>Uma história fica mais inteira quando muitas vozes participam.</h2><p>Você tem fotografias, documentos, mapas ou lembranças do Rio da Casca? Sua contribuição pode ajudar a identificar lugares, pessoas e acontecimentos.</p><a className="button light" href="/contribua">Compartilhar uma memória</a></section>
       <footer><div className="brand footer-brand"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></div><p>Um acervo comunitário dedicado à história, à natureza e às pessoas do Rio da Casca.</p><div className="footer-meta"><span>Chapada dos Guimarães · MT · Brasil</span><span>© 2026 Rio da Casca</span></div></footer>

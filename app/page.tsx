@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const themes = [
   { number: "01", title: "História e memória", text: "Documentos, relatos e acontecimentos que atravessam gerações.", href: "/historia" },
   { number: "02", title: "Natureza e território", text: "O rio, as cachoeiras, o cerrado e as paisagens que formam este lugar.", href: "/territorio" },
@@ -20,14 +22,14 @@ export default function Home() {
           <span>Rio da Casca<small>memória do território</small></span>
         </a>
         <nav aria-label="Navegação principal">
-          <a href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a>
+          <a href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a><a href="https://musicas.chapada.ia.br/">Músicas</a>
         </nav>
         <a className="menu-link" href="/acervo">Explorar acervo <span>↗</span></a>
       </header>
 
       <section className="hero" id="inicio">
         <div className="hero-image">
-          <img src="https://riodacasca.com.br/wd/wp-content/uploads/2018/01/ponte03-850x450.jpg" alt="Ponte sobre o Rio da Casca cercada pela vegetação" />
+          <Image src="https://riodacasca.com.br/wd/wp-content/uploads/2018/01/ponte03-850x450.jpg" alt="Ponte sobre o Rio da Casca cercada pela vegetação" fill priority sizes="(max-width: 850px) 100vw, 54vw" />
           <p>Ponte do Casca · Acervo Rio da Casca</p>
         </div>
         <div className="hero-copy">
@@ -57,10 +59,10 @@ export default function Home() {
         <p className="section-index">03 — Memória compartilhada</p>
         <h2>Esta história também pode ser contada por você.</h2>
         <p>Fotografias, documentos e relatos pessoais ajudam a formar um acervo vivo e plural do Rio da Casca.</p>
-        <a className="button light" href="mailto:contato@riodacasca.com.br">Compartilhe uma memória</a>
+        <a className="button light" href="/contribua">Compartilhe uma memória</a>
       </section>
 
-      <footer><div className="brand footer-brand"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></div><p>Um acervo comunitário dedicado à história, à natureza e às pessoas do Rio da Casca.</p><div className="footer-meta"><span>Chapada dos Guimarães · MT · Brasil</span><span>© 2026 Rio da Casca</span></div></footer>
+      <footer><div className="brand footer-brand"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></div><p>Um acervo comunitário dedicado à história, à natureza e às pessoas do Rio da Casca.</p><div className="footer-links"><a href="/sobre">Sobre</a><a href="/metodologia">Metodologia</a><a href="/privacidade">Privacidade</a><a href="/contribua">Contribua</a><a href="https://musicas.chapada.ia.br/">Músicas</a></div><div className="footer-meta"><span>Chapada dos Guimarães · MT · Brasil</span><span>© 2026 Rio da Casca</span></div></footer>
     </main>
   );
 }

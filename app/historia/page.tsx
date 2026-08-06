@@ -11,7 +11,7 @@ export default function Historia() {
     <main>
       <header className="topbar history-topbar">
         <a className="brand" href="/" aria-label="Rio da Casca — início"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></a>
-        <nav aria-label="Navegação principal"><a className="active" href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a></nav>
+        <nav aria-label="Navegação principal"><a className="active" href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a><a href="https://musicas.chapada.ia.br/">Músicas</a></nav>
         <a className="menu-link" href="/">Voltar ao início <span>↗</span></a>
       </header>
 
@@ -30,7 +30,7 @@ export default function Historia() {
         ))}
       </section>
 
-      <section className="history-callout"><p className="section-index">Acervo comunitário</p><h2>Uma história fica mais inteira quando muitas vozes participam.</h2><p>Você tem fotografias, documentos, mapas ou lembranças do Rio da Casca? Sua contribuição pode ajudar a identificar lugares, pessoas e acontecimentos.</p><a className="button light" href="mailto:contato@riodacasca.com.br?subject=Memória%20do%20Rio%20da%20Casca">Compartilhar uma memória</a></section>
+      <section className="history-callout"><p className="section-index">Acervo comunitário</p><h2>Uma história fica mais inteira quando muitas vozes participam.</h2><p>Você tem fotografias, documentos, mapas ou lembranças do Rio da Casca? Sua contribuição pode ajudar a identificar lugares, pessoas e acontecimentos.</p><a className="button light" href="/contribua">Compartilhar uma memória</a></section>
       <footer><div className="brand footer-brand"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></div><p>Um acervo comunitário dedicado à história, à natureza e às pessoas do Rio da Casca.</p><div className="footer-meta"><span>Chapada dos Guimarães · MT · Brasil</span><span>© 2026 Rio da Casca</span></div></footer>
     </main>
   );

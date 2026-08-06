@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { archiveRecords } from "./data/archive";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://riodacasca.chapada.ia.br";
-  const portal: MetadataRoute.Sitemap = ["", "/historia", "/territorio", "/comunidade", "/acervo"].map((path, index) => ({
+  const portal: MetadataRoute.Sitemap = ["", "/historia", "/territorio", "/comunidade", "/acervo", "/contribua", "/sobre", "/metodologia", "/privacidade"].map((path, index) => ({
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: index === 0 ? ("weekly" as const) : ("monthly" as const),
@@ -11,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...portal,
+    ...archiveRecords.map((record) => ({ url: `${base}/acervo/${record.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 })),
     {
       url: "https://musicas.chapada.ia.br",
       lastModified: new Date(),

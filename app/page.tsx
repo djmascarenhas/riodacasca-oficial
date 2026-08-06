@@ -16,10 +16,10 @@ const timeline = [
 export default function Home() {
   return (
     <main>
-      <header className="topbar">
+      <header className="topbar portal-topbar">
         <a className="brand" href="#inicio" aria-label="Rio da Casca — início">
           <span className="brand-mark">RC</span>
-          <span>Rio da Casca<small>memória do território</small></span>
+          <span>Rio da Casca<small>Chapada.ia · memória do território</small></span>
         </a>
         <nav aria-label="Navegação principal">
           <a href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a><a href="https://musicas.chapada.ia.br/">Músicas</a>
@@ -27,10 +27,15 @@ export default function Home() {
         <a className="menu-link" href="/acervo">Explorar acervo <span>↗</span></a>
       </header>
 
-      <section className="hero" id="inicio">
-        <div className="hero-image">
-          <Image src="/acervo/legado/ponte-do-casca.jpg" alt="Ponte sobre o Rio da Casca cercada pela vegetação" fill priority sizes="(max-width: 850px) 100vw, 54vw" />
-          <p>Ponte do Casca · Acervo legado · autoria em identificação</p>
+      <section className="hero refreshed-hero" id="inicio">
+        <div className="hero-media">
+          <Image className="hero-waterfall" src="/portal/cachoeira-rio-da-casca.jpg" alt="Grande cachoeira do Rio da Casca cercada pela vegetação" fill priority sizes="(max-width: 850px) 100vw, 56vw" />
+          <div className="hero-media-shade" />
+          <p className="hero-credit">Cachoeira do Rio da Casca · Acervo legado · autoria em identificação</p>
+          <a className="hero-chale" href="/acervo/chale-dos-governadores" aria-label="Conhecer o registro do Chalé dos Governadores">
+            <span className="hero-chale-image"><Image src="/portal/chale-dos-governadores.jpg" alt="Chalé dos Governadores entre árvores" fill sizes="(max-width: 850px) 42vw, 22vw" /></span>
+            <span className="hero-chale-copy"><small>Patrimônio em pesquisa</small><strong>Chalé dos Governadores</strong><b>Conhecer o registro →</b></span>
+          </a>
         </div>
         <div className="hero-copy">
           <p className="eyebrow">Chapada dos Guimarães · Mato Grosso</p>
@@ -62,7 +67,7 @@ export default function Home() {
         <a className="button light" href="/contribua">Compartilhe uma memória</a>
       </section>
 
-      <footer><div className="brand footer-brand"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></div><p>Um acervo comunitário dedicado à história, à natureza e às pessoas do Rio da Casca.</p><div className="footer-links"><a href="/sobre">Sobre</a><a href="/metodologia">Metodologia</a><a href="/privacidade">Privacidade</a><a href="/contribua">Contribua</a><a href="https://musicas.chapada.ia.br/">Músicas</a></div><div className="footer-meta"><span>Chapada dos Guimarães · MT · Brasil</span><span>© 2026 Rio da Casca</span></div></footer>
+      <footer><div className="brand footer-brand"><span className="brand-mark">RC</span><span>Rio da Casca<small>Chapada.ia · memória do território</small></span></div><p>Um acervo comunitário dedicado à história, à natureza e às pessoas do Rio da Casca.</p><div className="footer-links"><a href="/rede-comunitaria">Rede comunitária</a><a href="/comunicados">Comunicados</a><a href="/diretrizes">Diretrizes</a><a href="/audiovisual">Audiovisual</a><a href="/sobre">Sobre</a><a href="/metodologia">Metodologia</a><a href="/privacidade">Privacidade</a><a href="/contribua">Contribua</a><a href="https://musicas.chapada.ia.br/">Músicas</a></div><div className="footer-meta"><span>Ecossistema Chapada.ia · Chapada dos Guimarães · MT</span><span>© 2026 Rio da Casca</span></div></footer>
     </main>
   );
 }

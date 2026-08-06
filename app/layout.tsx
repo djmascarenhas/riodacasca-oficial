@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./portal-refresh.css";
+import "./community-network.css";
 import MobileNav from "./components/MobileNav";
 
 export const metadata: Metadata = {

@@ -11,7 +11,7 @@ export type ArchiveRecord = {
   location: string;
   status: "Fonte institucional" | "Em pesquisa" | "Acervo legado — em revisão";
   reviewedAt: string;
-  collection?: "Patrimônio da energia" | "História do território" | "Natureza e conservação";
+  collection?: "Patrimônio da energia" | "História do território" | "Natureza e conservação" | "Organização comunitária";
   image?: { src: string; alt: string; credit: string };
 };
 
@@ -85,6 +85,7 @@ export const archiveRecords: ArchiveRecord[] = [
     location: "Comunidade do Rio da Casca — MT",
     status: "Fonte institucional",
     reviewedAt: "6 de agosto de 2026",
+    collection: "Organização comunitária",
   },
   {
     slug: "apoio-agricultura-familiar",
@@ -99,6 +100,7 @@ export const archiveRecords: ArchiveRecord[] = [
     location: "Comunidade do Rio da Casca — MT",
     status: "Fonte institucional",
     reviewedAt: "6 de agosto de 2026",
+    collection: "Organização comunitária",
   },
   {
     slug: "inauguracao-usina-casca-ii",
@@ -223,6 +225,22 @@ export const archiveRecords: ArchiveRecord[] = [
     status: "Acervo legado — em revisão",
     reviewedAt: "6 de agosto de 2026",
     collection: "Natureza e conservação",
+  },
+  {
+    slug: "chale-dos-governadores",
+    code: "LEG-009",
+    type: "Fotografia",
+    category: "Fotografias",
+    year: "Data em pesquisa",
+    title: "Chalé dos Governadores",
+    summary: "Registro fotográfico do conjunto conhecido no acervo anterior como Chalé ou Residência dos Governadores. Data, autoria, uso e relação histórica com o território ainda serão documentados.",
+    source: "Acervo legado Rio da Casca",
+    sourceUrl: "https://riodacasca.com.br/wd/wp-content/uploads/1954/01/Chapada-dos-Guimaraes-Chale-dos-Governadores.-Residencia-dos-Governadores.jpg",
+    location: "Chapada dos Guimarães — MT",
+    status: "Acervo legado — em revisão",
+    reviewedAt: "6 de agosto de 2026",
+    collection: "História do território",
+    image: { src: "/portal/chale-dos-governadores.jpg", alt: "Chalé dos Governadores entre árvores", credit: "Acervo legado Rio da Casca — autoria em identificação" },
   },
 ];
 

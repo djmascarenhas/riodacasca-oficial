@@ -3,7 +3,7 @@ import { archiveRecords } from "./data/archive";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://riodacasca.chapada.ia.br";
-  const portal: MetadataRoute.Sitemap = ["", "/historia", "/territorio", "/comunidade", "/acervo", "/contribua", "/sobre", "/metodologia", "/privacidade"].map((path, index) => ({
+  const portal: MetadataRoute.Sitemap = ["", "/historia", "/territorio", "/comunidade", "/rede-comunitaria", "/comunicados", "/diretrizes", "/audiovisual", "/acervo", "/contribua", "/sobre", "/metodologia", "/privacidade"].map((path, index) => ({
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: index === 0 ? ("weekly" as const) : ("monthly" as const),

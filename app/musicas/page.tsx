@@ -40,7 +40,7 @@ export default async function MusicPortal() {
       <nav className="portal-nav" aria-label="Navegação principal">
         <a className="portal-brand" href="#inicio" aria-label="Músicas de DJ Dalma — início">
           <span className="portal-brand-mark">DD</span>
-          <span><strong>Músicas</strong><small>DJ Dalma</small></span>
+          <span><strong>Músicas</strong><small>Chapada.ia · DJ Dalma</small></span>
         </a>
         <div className="portal-links">
           <a href="#acervo">Composições</a>
@@ -129,9 +129,9 @@ export default async function MusicPortal() {
       </section>
 
       <footer className="portal-footer">
-        <div className="portal-brand"><span className="portal-brand-mark">DD</span><span><strong>Músicas</strong><small>DJ Dalma</small></span></div>
+        <div className="portal-brand"><span className="portal-brand-mark">DD</span><span><strong>Músicas</strong><small>Chapada.ia · DJ Dalma</small></span></div>
         <p>Composições, histórias e memória de Mato Grosso.</p>
-        <a href="#inicio">Voltar ao início ↑</a>
+        <div className="portal-footer-links"><a href="https://riodacasca.chapada.ia.br/">Rio da Casca ↗</a><a href="#inicio">Voltar ao início ↑</a></div>
       </footer>
     </main>
   );

@@ -292,6 +292,10 @@ main { overflow: hidden; }
 .release-listen-art { aspect-ratio: 1; box-shadow: 0 34px 70px rgba(39,29,18,.27); max-width: 530px; overflow: hidden; position: relative; width: 100%; }
 .release-listen-art img { object-fit: cover; }
 .release-listen .themes { margin-bottom: 32px; }
+.release-platforms { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px; }
+.release-platforms > span { color: var(--clay); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; width: 100%; }
+.release-platforms a { border: 1px solid rgba(29,35,29,.26); border-radius: 999px; color: var(--forest-deep); font-size: 12px; font-weight: 800; padding: 10px 14px; transition: background .2s ease, transform .2s ease; }
+.release-platforms a:hover { background: rgba(29,35,29,.08); transform: translateY(-2px); }
 .release-related { background: var(--paper); display: grid; gap: clamp(50px, 9vw, 140px); grid-template-columns: 1fr 1fr; padding: clamp(90px, 11vw, 150px) clamp(24px, 9vw, 140px); }
 .release-related > div:last-child { border-top: 1px solid rgba(29,35,29,.22); }
 .release-related a { align-items: center; border-bottom: 1px solid rgba(29,35,29,.22); display: grid; gap: 16px; grid-template-columns: 100px 1fr auto; padding: 28px 0; }

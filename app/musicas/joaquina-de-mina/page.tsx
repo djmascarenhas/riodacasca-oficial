@@ -26,8 +26,9 @@ const release: Release = {
     { label: "Continuidade", title: "Uma canção que abre conversa", text: "O lançamento é também um convite para reunir lembranças, fontes e interpretações sobre Joaquina e o Rio da Casca." },
   ],
   themes: ["Joaquina", "Memória", "Resistência", "Rio da Casca"],
-  listenHref: "https://open.spotify.com/artist/6BBDYGtCH719wJOuqq0vKk",
-  listenLabel: "Ouvir DJ Dalma no Spotify",
+  listenHref: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD",
+  listenLabel: "Ouvir no Spotify",
+  listenLinks: [{ label: "Spotify", href: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD" }],
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Rio da Casca, Meu Chão", href: "rio-da-casca-meu-chao" }],
 };
 

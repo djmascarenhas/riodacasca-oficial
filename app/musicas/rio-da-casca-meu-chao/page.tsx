@@ -16,6 +16,7 @@ const release: Release = {
   themes: ["Rio da Casca", "Pertencimento", "Paisagem", "Memória"],
   listenHref: "https://music.apple.com/br/album/rio-da-casca-meu-ch%C3%A3o/6789545608?i=6789545740",
   listenLabel: "Ouvir na Apple Music",
+  listenLinks: [{ label: "Apple Music", href: "https://music.apple.com/br/album/rio-da-casca-meu-ch%C3%A3o/6789545608?i=6789545740" }],
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Pedra Rara", href: "pedra-rara" }],
 };
 

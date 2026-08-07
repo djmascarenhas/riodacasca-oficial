@@ -6,6 +6,7 @@ const musicRoutes: Record<string, string> = {
   "/valentim-ha-de-voltar": "/musicas/valentim-ha-de-voltar",
   "/rio-da-casca-meu-chao": "/musicas/rio-da-casca-meu-chao",
   "/pedra-rara": "/musicas/pedra-rara",
+  "/joaquina-de-mina": "/musicas/joaquina-de-mina",
   "/robots.txt": "/musicas/robots.txt",
   "/sitemap.xml": "/musicas/sitemap.xml",
 };
@@ -22,5 +23,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/valentim-ha-de-voltar", "/rio-da-casca-meu-chao", "/pedra-rara", "/robots.txt", "/sitemap.xml"],
+  matcher: ["/", "/valentim-ha-de-voltar", "/rio-da-casca-meu-chao", "/pedra-rara", "/joaquina-de-mina", "/robots.txt", "/sitemap.xml"],
 };

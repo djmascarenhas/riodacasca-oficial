@@ -42,6 +42,14 @@ const catalog = [
     featured: false,
     external: "https://open.spotify.com/track/4Tes1U92U6cQ0oiowHkw64",
   },
+  {
+    title: "Joaquina de Mina",
+    subtitle: "Memória, presença e resistência",
+    image: "/musicas/images/rio-da-casca-meu-chao.png",
+    href: "joaquina-de-mina",
+    status: "Conheça a história",
+    featured: false,
+  },
 ];
 
 export default async function MusicPortal() {

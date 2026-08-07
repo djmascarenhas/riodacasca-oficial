@@ -36,6 +36,8 @@ const themes = [
   "Desenvolvimento regional",
 ];
 
+const listeningOptions = [{ label: "YouTube Music", href: "https://music.youtube.com/watch?v=Vs4xX8BRgN4" }];
+
 const materials = [
   {
     tag: "Estratégia",
@@ -180,6 +182,7 @@ export default async function ValentimPage() {
           <a className="button button-dark" href="https://music.youtube.com/watch?v=Vs4xX8BRgN4" target="_blank" rel="noreferrer">
             <span className="play" aria-hidden="true">▶</span> Abrir no YouTube Music
           </a>
+          <div className="release-platforms" aria-label="Escolha onde ouvir"><span>Escolha onde ouvir</span>{listeningOptions.map((platform) => <a key={platform.href} href={platform.href} target="_blank" rel="noreferrer">{platform.label} <span aria-hidden="true">↗</span></a>)}</div>
           <div className="themes" aria-label="Temas da música">
             {themes.map((theme) => <span key={theme}>{theme}</span>)}
           </div>

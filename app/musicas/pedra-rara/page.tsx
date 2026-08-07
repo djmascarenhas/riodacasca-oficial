@@ -16,6 +16,7 @@ const release: Release = {
   themes: ["Garimpo", "Persistência", "Descoberta", "Memória"],
   listenHref: "https://open.spotify.com/track/4Tes1U92U6cQ0oiowHkw64",
   listenLabel: "Ouvir no Spotify",
+  listenLinks: [{ label: "Spotify", href: "https://open.spotify.com/track/4Tes1U92U6cQ0oiowHkw64" }],
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Rio da Casca, Meu Chão", href: "rio-da-casca-meu-chao" }],
 };
 

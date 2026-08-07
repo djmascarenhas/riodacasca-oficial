@@ -27,7 +27,7 @@ const catalog = [
   {
     title: "Rio da Casca, Meu Chão",
     subtitle: "Memória, território e pertencimento",
-    image: "/musicas/images/rio-da-casca-meu-chao.png",
+    image: "/musicas/images/joaquina-de-mina.png",
     href: "rio-da-casca-meu-chao",
     status: "Disponível na Apple Music",
     featured: false,

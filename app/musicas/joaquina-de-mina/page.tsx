@@ -5,7 +5,7 @@ export const metadata = {
   title: { absolute: "Joaquina de Mina | DJ Dalma" },
   description: "Uma canção sobre presença, memória e a força de Joaquina na história de Mato Grosso.",
   alternates: { canonical: "/joaquina-de-mina" },
-  openGraph: { images: ["/musicas/images/rio-da-casca-meu-chao.png"] },
+  openGraph: { images: ["/musicas/images/joaquina-de-mina.png"] },
 };
 
 const release: Release = {
@@ -13,12 +13,12 @@ const release: Release = {
   title: "Joaquina de Mina",
   kicker: "Memória · presença · resistência",
   lead: "Uma composição que devolve centralidade à mulher cuja presença também sustenta a história de Valentim e do Rio da Casca.",
-  image: "/musicas/images/rio-da-casca-meu-chao.png",
-  imageAlt: "Paisagem do Rio da Casca usada como arte de apoio para Joaquina de Mina",
+  image: "/musicas/images/joaquina-de-mina.png",
+  imageAlt: "Capa de Joaquina de Mina, com uma mulher negra trabalhando em um pilão, entre cestos e utensílios de uma casa de farinha",
   storyTitle: "Uma história também se faz pela voz de Joaquina.",
   story: [
     "“Joaquina de Mina” amplia o universo de “Valentim há de Voltar” ao olhar para a personagem que dá profundidade humana à travessia, ao afeto e às raízes criadas no Rio da Casca.",
-    "A página usa a paisagem do território como imagem de apoio enquanto a arte oficial da composição é organizada. O objetivo é apresentar a canção com contexto, respeito à memória e espaço para novas informações sobre a personagem.",
+    "A capa apresenta Joaquina em seu espaço de trabalho, entre cestos, raízes e utensílios de uma casa de farinha. A imagem aproxima a canção do cotidiano, do ofício e da força de uma mulher que sustenta a memória do território.",
   ],
   details: [
     { label: "Presença", title: "Uma personagem no centro", text: "Joaquina não aparece apenas como parte da narrativa: sua presença ajuda a compreender a formação afetiva e social do território." },

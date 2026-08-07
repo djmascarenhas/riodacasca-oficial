@@ -1,5 +1,20 @@
 import { headers } from "next/headers";
 
+const artistPlatforms = [
+  {
+    name: "Spotify",
+    href: "https://open.spotify.com/artist/6BBDYGtCH719wJOuqq0vKk",
+  },
+  {
+    name: "Apple Music",
+    href: "https://music.apple.com/br/artist/dj-dalma/1832286631",
+  },
+  {
+    name: "YouTube Music",
+    href: "https://music.youtube.com/channel/UCuBpQJGDfOD-g29-QhA2Ncg",
+  },
+];
+
 const catalog = [
   {
     title: "Valentim há de Voltar",
@@ -13,17 +28,19 @@ const catalog = [
     title: "Rio da Casca, Meu Chão",
     subtitle: "Memória, território e pertencimento",
     image: "/musicas/images/rio-da-casca-meu-chao.png",
-    href: "#acervo",
-    status: "Página em preparação",
+    href: "rio-da-casca-meu-chao",
+    status: "Disponível na Apple Music",
     featured: false,
+    external: "https://music.apple.com/br/album/rio-da-casca-meu-ch%C3%A3o/6789545608?i=6789545740",
   },
   {
     title: "Pedra Rara",
     subtitle: "Uma composição de DJ Dalma",
     image: "/musicas/images/pedra-rara.png",
-    href: "#acervo",
-    status: "Página em preparação",
+    href: "pedra-rara",
+    status: "Disponível no Spotify",
     featured: false,
+    external: "https://open.spotify.com/track/4Tes1U92U6cQ0oiowHkw64",
   },
 ];
 
@@ -56,7 +73,16 @@ export default async function MusicPortal() {
           <p>
             O acervo musical de DJ Dalma: composições que conectam paisagem, pesquisa, memória e as raízes do território mato-grossense.
           </p>
-          <a className="button button-light" href="#acervo">Explorar o acervo ↓</a>
+          <div className="portal-hero-actions">
+            <a className="button button-light" href="#acervo">Explorar o acervo ↓</a>
+            <div className="platform-links" aria-label="Ouça DJ Dalma nas plataformas digitais">
+              {artistPlatforms.map((platform) => (
+                <a key={platform.name} href={platform.href} target="_blank" rel="noreferrer">
+                  {platform.name} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
         <a className="featured-disc" href={compositionHref} aria-label="Abrir página de Valentim há de Voltar">
           <span className="featured-badge">Em destaque</span>
@@ -82,17 +108,20 @@ export default async function MusicPortal() {
 
         <div className="song-grid">
           {catalog.map((song, index) => (
-            <article className={`song-card${song.featured ? " is-live" : ""}`} key={song.title}>
-              <a href={song.featured ? compositionHref : song.href} aria-label={`${song.title}: ${song.status}`}>
+            <article className="song-card is-live" key={song.title}>
+              <a
+                href={song.featured ? compositionHref : `${portalBase}/${song.href}`}
+                aria-label={`${song.title}: ${song.status}`}
+              >
                 <div className="song-image" style={{ backgroundImage: `url('${song.image}')` }}>
                   <span className="song-index">{String(index + 1).padStart(2, "0")}</span>
-                  {song.featured && <span className="song-play" aria-hidden="true">▶</span>}
+                  <span className="song-play" aria-hidden="true">▶</span>
                 </div>
                 <div className="song-info">
                   <span className="song-status">{song.status}</span>
                   <h3>{song.title}</h3>
                   <p>{song.subtitle}</p>
-                  <span className="song-action">{song.featured ? "Abrir composição →" : "Em breve"}</span>
+                  <span className="song-action">Conhecer e ouvir →</span>
                 </div>
               </a>
             </article>

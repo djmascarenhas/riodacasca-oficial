@@ -4,6 +4,8 @@ const MUSIC_HOST = "musicas.chapada.ia.br";
 const musicRoutes: Record<string, string> = {
   "/": "/musicas",
   "/valentim-ha-de-voltar": "/musicas/valentim-ha-de-voltar",
+  "/rio-da-casca-meu-chao": "/musicas/rio-da-casca-meu-chao",
+  "/pedra-rara": "/musicas/pedra-rara",
   "/robots.txt": "/musicas/robots.txt",
   "/sitemap.xml": "/musicas/sitemap.xml",
 };
@@ -20,5 +22,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/valentim-ha-de-voltar", "/robots.txt", "/sitemap.xml"],
+  matcher: ["/", "/valentim-ha-de-voltar", "/rio-da-casca-meu-chao", "/pedra-rara", "/robots.txt", "/sitemap.xml"],
 };

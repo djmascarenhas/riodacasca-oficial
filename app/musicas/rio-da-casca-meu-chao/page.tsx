@@ -20,4 +20,4 @@ const release: Release = {
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Pedra Rara", href: "pedra-rara" }],
 };
 
-export default async function Page() { const requestHeaders = await headers(); const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "").split(":")[0].toLowerCase(); return <ReleasePage release={release} portalHref={host === "musicas.chapada.ia.br" ? "/" : "/musicas"} />; }
+export default async function Page() { const requestHeaders = await headers(); const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "").split(":")[0].toLowerCase(); return <ReleasePage release={release} portalHref={host === "musicas.chapada.ia.br" ? "/" : "/musicas"} sharePath="/musicas/rio-da-casca-meu-chao" />; }

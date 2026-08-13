@@ -299,6 +299,12 @@ main { overflow: hidden; }
 .release-platforms > span { color: var(--clay); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; width: 100%; }
 .release-platforms a { border: 1px solid rgba(29,35,29,.26); border-radius: 999px; color: var(--forest-deep); font-size: 12px; font-weight: 800; padding: 10px 14px; transition: background .2s ease, transform .2s ease; }
 .release-platforms a:hover { background: rgba(29,35,29,.08); transform: translateY(-2px); }
+.music-share { border-top: 1px solid rgba(29,35,29,.22); margin-top: 30px; padding-top: 23px; }
+.music-share > span { color: var(--clay); display: block; font-size: 11px; font-weight: 800; letter-spacing: .08em; margin-bottom: 10px; text-transform: uppercase; }
+.music-share-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.music-share-actions a, .music-share-actions button { background: transparent; border: 1px solid rgba(29,35,29,.26); border-radius: 999px; color: var(--forest-deep); cursor: pointer; font: 800 12px var(--font-sans); padding: 10px 14px; transition: background .2s ease, transform .2s ease; }
+.music-share-actions a:hover, .music-share-actions button:hover { background: rgba(29,35,29,.08); transform: translateY(-2px); }
+.music-share-actions .share-native { display: none; }
 .release-related { background: var(--paper); display: grid; gap: clamp(50px, 9vw, 140px); grid-template-columns: 1fr 1fr; padding: clamp(90px, 11vw, 150px) clamp(24px, 9vw, 140px); }
 .release-related > div:last-child { border-top: 1px solid rgba(29,35,29,.22); }
 .release-related a { align-items: center; border-bottom: 1px solid rgba(29,35,29,.22); display: grid; gap: 16px; grid-template-columns: 100px 1fr auto; padding: 28px 0; }
@@ -332,6 +338,7 @@ footer a { justify-self: end; }
   .release-details article { border: 0; border-bottom: 1px solid rgba(29,35,29,.2); min-height: 0; }
   .release-details article:last-child { border-right: 0; }
   .release-listen-art { justify-self: center; }
+  .music-share { text-align: left; }
 }
 
 @media (max-width: 620px) {
@@ -373,6 +380,7 @@ footer a { justify-self: end; }
   .release-details article { padding-left: 0; padding-right: 0; }
   .release-related a { grid-template-columns: 1fr auto; }
   .release-related a span { grid-column: 1 / -1; }
+  .music-share-actions .share-native { display: inline-flex; }
 }
 
 @media (prefers-reduced-motion: reduce) {

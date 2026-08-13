@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ShareMusic from "./ShareMusic";
 
 export type Release = {
   mark: string;
@@ -17,7 +18,7 @@ export type Release = {
   related: { title: string; href: string }[];
 };
 
-export default function ReleasePage({ release, portalHref }: { release: Release; portalHref: string }) {
+export default function ReleasePage({ release, portalHref, sharePath }: { release: Release; portalHref: string; sharePath: string }) {
   const songBase = portalHref === "/" ? "" : portalHref;
   const listenLinks = release.listenLinks ?? [{ label: release.listenLabel, href: release.listenHref }];
   return <main className="music-site release-page">
@@ -32,7 +33,7 @@ export default function ReleasePage({ release, portalHref }: { release: Release;
     </section>
     <section className="release-story" id="historia"><div><p className="section-kicker">A composição</p><h2>{release.storyTitle}</h2></div><div className="release-story-copy">{release.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></section>
     <section className="release-details">{release.details.map((detail, index) => <article key={detail.title}><span>{String(index + 1).padStart(2, "0")} · {detail.label}</span><h3>{detail.title}</h3><p>{detail.text}</p></article>)}</section>
-    <section className="release-listen" id="ouvir"><div className="release-listen-art"><Image src={release.image} alt="" fill sizes="(max-width: 900px) 75vw, 34vw" /></div><div><p className="section-kicker">Disponível agora</p><h2>{release.title}</h2><p className="music-by">DJ Dalma · Djalma Mascarenhas</p><div className="themes">{release.themes.map((theme) => <span key={theme}>{theme}</span>)}</div><a className="button button-dark" href={release.listenHref} target="_blank" rel="noreferrer"><span className="play" aria-hidden="true">▶</span>{release.listenLabel}</a><div className="release-platforms" aria-label="Escolha onde ouvir"><span>Escolha onde ouvir</span>{listenLinks.map((platform) => <a key={platform.href} href={platform.href} target="_blank" rel="noreferrer">{platform.label} <span aria-hidden="true">↗</span></a>)}</div></div></section>
+    <section className="release-listen" id="ouvir"><div className="release-listen-art"><Image src={release.image} alt="" fill sizes="(max-width: 900px) 75vw, 34vw" /></div><div><p className="section-kicker">Disponível agora</p><h2>{release.title}</h2><p className="music-by">DJ Dalma · Djalma Mascarenhas</p><div className="themes">{release.themes.map((theme) => <span key={theme}>{theme}</span>)}</div><a className="button button-dark" href={release.listenHref} target="_blank" rel="noreferrer"><span className="play" aria-hidden="true">▶</span>{release.listenLabel}</a><div className="release-platforms" aria-label="Escolha onde ouvir"><span>Escolha onde ouvir</span>{listenLinks.map((platform) => <a key={platform.href} href={platform.href} target="_blank" rel="noreferrer">{platform.label} <span aria-hidden="true">↗</span></a>)}</div><ShareMusic title={release.title} path={sharePath} /></div></section>
     <section className="release-related"><div><p className="section-kicker">Continue ouvindo</p><h2>Outras histórias em música.</h2></div><div>{release.related.map((item) => <a href={`${songBase}/${item.href}`} key={item.href}><span>Composição</span><strong>{item.title}</strong><b>→</b></a>)}</div></section>
     <footer className="portal-footer"><div className="portal-brand"><span className="portal-brand-mark">DD</span><span><strong>Músicas</strong><small>Chapada.ia · DJ Dalma</small></span></div><p>Composições, histórias e memória de Mato Grosso.</p><div className="portal-footer-links"><a href={portalHref}>Todas as músicas ↑</a><a href="https://riodacasca.chapada.ia.br/">Rio da Casca ↗</a></div></footer>
   </main>;

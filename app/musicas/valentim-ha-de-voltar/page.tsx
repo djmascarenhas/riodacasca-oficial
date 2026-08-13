@@ -3,7 +3,9 @@ import { headers } from "next/headers";
 export const metadata = {
   title: { absolute: "Valentim há de Voltar | DJ Dalma" },
   description: "A saga de Valentim, o Rio da Casca e as raízes de Mato Grosso em uma composição de DJ Dalma.",
-  alternates: { canonical: "/valentim-ha-de-voltar" },
+  alternates: { canonical: "/musicas/valentim-ha-de-voltar" },
+  openGraph: { url: "/musicas/valentim-ha-de-voltar", type: "music.song", title: "Valentim há de Voltar | DJ Dalma", description: "A saga de Valentim, o Rio da Casca e as raízes de Mato Grosso em uma composição de DJ Dalma.", images: [{ url: "/musicas/og/valentim-ha-de-voltar.png", width: 1200, height: 630, alt: "Valentim há de Voltar, de DJ Dalma" }] },
+  twitter: { card: "summary_large_image", images: ["/musicas/og/valentim-ha-de-voltar.png"] },
 };
 
 const journey = [

@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import ReleasePage, { type Release } from "../components/ReleasePage";
 
-export const metadata = { title: { absolute: "Rio da Casca, Meu Chão | DJ Dalma" }, description: "Memória, território e pertencimento em uma composição de DJ Dalma.", alternates: { canonical: "/rio-da-casca-meu-chao" }, openGraph: { images: ["/musicas/images/rio-da-casca-meu-chao.png"] } };
+export const metadata = { title: { absolute: "Rio da Casca, Meu Chão | DJ Dalma" }, description: "Memória, território e pertencimento em uma composição de DJ Dalma.", alternates: { canonical: "/musicas/rio-da-casca-meu-chao" }, openGraph: { url: "/musicas/rio-da-casca-meu-chao", type: "music.song", title: "Rio da Casca, Meu Chão | DJ Dalma", description: "Memória, território e pertencimento em uma composição de DJ Dalma.", images: [{ url: "/musicas/og/rio-da-casca-meu-chao.png", width: 1200, height: 630, alt: "Rio da Casca, Meu Chão, de DJ Dalma" }] }, twitter: { card: "summary_large_image", images: ["/musicas/og/rio-da-casca-meu-chao.png"] } };
 
 const release: Release = {
   mark: "02",
@@ -20,4 +20,4 @@ const release: Release = {
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Pedra Rara", href: "pedra-rara" }],
 };
 
-export default async function Page() { const requestHeaders = await headers(); const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "").split(":")[0].toLowerCase(); return <ReleasePage release={release} portalHref={host === "musicas.chapada.ia.br" ? "/" : "/musicas"} />; }
+export default async function Page() { const requestHeaders = await headers(); const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "").split(":")[0].toLowerCase(); return <ReleasePage release={release} portalHref={host === "musicas.chapada.ia.br" ? "/" : "/musicas"} sharePath="/musicas/rio-da-casca-meu-chao" />; }

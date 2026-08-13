@@ -27,9 +27,9 @@ const release: Release = {
     { label: "Continuidade", title: "Uma canção que abre conversa", text: "O lançamento é também um convite para reunir lembranças, fontes e interpretações sobre Joaquina e o Rio da Casca." },
   ],
   themes: ["Joaquina", "Memória", "Resistência", "Rio da Casca"],
-  listenHref: "https://somvibe.lnk.to/60OkDeVy",
-  listenLabel: "Ouvir no Smartlink Somvibe",
-  listenLinks: [{ label: "Smartlink Somvibe", href: "https://somvibe.lnk.to/60OkDeVy" }, { label: "Spotify", href: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD" }],
+  listenHref: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD",
+  listenLabel: "Ouvir no Spotify",
+  listenLinks: [{ label: "Spotify", href: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD" }, { label: "YouTube Music", href: "https://music.youtube.com/playlist?list=OLAK5uy_ly1N51LojiuOWZVGsyNV0j41mWcxczsPg" }, { label: "Deezer", href: "https://www.deezer.com/album/1040923262" }, { label: "Apple Music", href: "https://music.apple.com/br/album/6796288331" }],
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Rio da Casca, Meu Chão", href: "rio-da-casca-meu-chao" }],
 };
 

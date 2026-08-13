@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import ReleasePage, { type Release } from "../components/ReleasePage";
 
-export const metadata = { title: { absolute: "Pedra Rara | DJ Dalma" }, description: "Trabalho, busca e descoberta em uma composição de DJ Dalma.", alternates: { canonical: "/pedra-rara" }, openGraph: { images: ["/musicas/images/pedra-rara.png"] } };
+export const metadata = { title: { absolute: "Pedra Rara | DJ Dalma" }, description: "Trabalho, busca e descoberta em uma composição de DJ Dalma.", alternates: { canonical: "/musicas/pedra-rara" }, openGraph: { url: "/musicas/pedra-rara", type: "music.song", title: "Pedra Rara | DJ Dalma", description: "Trabalho, busca e descoberta em uma composição de DJ Dalma.", images: [{ url: "/musicas/og/pedra-rara.png", width: 1200, height: 630, alt: "Pedra Rara, de DJ Dalma" }] }, twitter: { card: "summary_large_image", images: ["/musicas/og/pedra-rara.png"] } };
 
 const release: Release = {
   mark: "03",

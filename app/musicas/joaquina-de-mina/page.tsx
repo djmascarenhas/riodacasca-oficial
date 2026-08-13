@@ -4,8 +4,9 @@ import ReleasePage, { type Release } from "../components/ReleasePage";
 export const metadata = {
   title: { absolute: "Joaquina de Mina | DJ Dalma" },
   description: "Uma canção sobre presença, memória e a força de Joaquina na história de Mato Grosso.",
-  alternates: { canonical: "/joaquina-de-mina" },
-  openGraph: { images: ["/musicas/images/joaquina-de-mina.png"] },
+  alternates: { canonical: "/musicas/joaquina-de-mina" },
+  openGraph: { url: "/musicas/joaquina-de-mina", type: "music.song", title: "Joaquina de Mina | DJ Dalma", description: "Uma canção sobre presença, memória e a força de Joaquina na história de Mato Grosso.", images: [{ url: "/musicas/og/joaquina-de-mina.png", width: 1200, height: 630, alt: "Joaquina de Mina, de DJ Dalma" }] },
+  twitter: { card: "summary_large_image", images: ["/musicas/og/joaquina-de-mina.png"] },
 };
 
 const release: Release = {

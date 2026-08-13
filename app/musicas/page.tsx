@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import FeaturedCarousel from "./components/FeaturedCarousel";
 
 const artistPlatforms = [
   {
@@ -58,7 +59,6 @@ export default async function MusicPortal() {
     .split(":")[0]
     .toLowerCase();
   const portalBase = host === "musicas.chapada.ia.br" ? "" : "/musicas";
-  const compositionHref = `${portalBase}/valentim-ha-de-voltar`;
 
   return (
     <main className="music-site portal">
@@ -92,16 +92,9 @@ export default async function MusicPortal() {
             </div>
           </div>
         </div>
-        <a className="featured-disc" href={compositionHref} aria-label="Abrir página de Valentim há de Voltar">
-          <span className="featured-badge">Em destaque</span>
-          <div className="disc-art" />
-          <div className="featured-meta">
-            <span>01</span>
-            <strong>Valentim há de Voltar</strong>
-            <small>Conheça a história →</small>
-          </div>
-        </a>
       </section>
+
+      <FeaturedCarousel portalBase={portalBase} />
 
       <section className="catalog" id="acervo">
         <div className="catalog-heading">
@@ -118,7 +111,7 @@ export default async function MusicPortal() {
           {catalog.map((song, index) => (
             <article className="song-card is-live" key={song.title}>
               <a
-                href={song.featured ? compositionHref : `${portalBase}/${song.href}`}
+                href={`${portalBase}/${song.href}`}
                 aria-label={`${song.title}: ${song.status}`}
               >
                 <div className="song-image" style={{ backgroundImage: `url('${song.image}')` }}>

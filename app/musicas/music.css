@@ -74,9 +74,9 @@ main { overflow: hidden; }
   color: var(--white);
   display: grid;
   gap: clamp(50px, 8vw, 130px);
-  grid-template-columns: 1.05fr .95fr;
-  min-height: 880px;
-  padding: 150px clamp(24px, 8vw, 124px) 90px;
+  grid-template-columns: 1fr;
+  min-height: 660px;
+  padding: 150px clamp(24px, 8vw, 124px) 100px;
   position: relative;
 }
 .portal-hero::before {
@@ -111,14 +111,17 @@ main { overflow: hidden; }
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
 .platform-links a:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.72); transform: translateY(-2px); }
-.featured-disc { display: block; justify-self: end; max-width: 500px; position: relative; width: 100%; z-index: 1; }
-.featured-badge { background: var(--gold); color: var(--forest-deep); font-size: 9px; font-weight: 800; letter-spacing: .18em; padding: 9px 13px; position: absolute; right: -8px; text-transform: uppercase; top: 28px; z-index: 2; }
-.disc-art { aspect-ratio: 1; background: url('/musicas/images/teaser_valentim.webp') center/cover; box-shadow: 0 42px 90px rgba(0,0,0,.42); transition: transform .3s ease; }
-.featured-disc:hover .disc-art { transform: translateY(-7px); }
-.featured-meta { align-items: center; border-bottom: 1px solid rgba(255,255,255,.22); display: grid; gap: 16px; grid-template-columns: auto 1fr auto; margin-top: 24px; padding-bottom: 20px; }
-.featured-meta > span { color: #d7a85e; font-family: Georgia, serif; font-size: 13px; font-style: italic; }
-.featured-meta strong { font-family: var(--font-serif), Georgia, serif; font-size: 23px; font-weight: 400; }
-.featured-meta small { opacity: .64; }
+.featured-carousel { color: var(--white); min-height: min(760px, 78vw); overflow: hidden; position: relative; }
+.featured-carousel-art, .featured-carousel-shade { inset: 0; position: absolute; }
+.featured-carousel-art { background-position: center; background-size: cover; transition: background-image .65s ease; }
+.featured-carousel-shade { background: linear-gradient(90deg, rgba(10,21,15,.9) 0%, rgba(10,21,15,.47) 50%, rgba(10,21,15,.12) 100%); }
+.featured-carousel-copy { left: clamp(24px, 8vw, 124px); max-width: 690px; position: relative; padding: clamp(120px, 12vw, 170px) 0 165px; z-index: 1; }
+.featured-carousel-copy h2 { font-family: var(--font-serif), Georgia, serif; font-size: clamp(56px, 8vw, 118px); font-weight: 400; letter-spacing: -.055em; line-height: .84; margin: 0; }
+.featured-carousel-copy > p:not(.eyebrow) { font-family: Georgia, serif; font-size: clamp(18px, 1.8vw, 25px); line-height: 1.55; margin: 30px 0 32px; }
+.featured-carousel-controls { bottom: 44px; display: flex; gap: 8px; left: clamp(24px, 8vw, 124px); position: absolute; right: clamp(24px, 8vw, 124px); z-index: 2; }
+.featured-carousel-controls button { background: rgba(13,25,18,.36); border: 1px solid rgba(255,255,255,.3); color: var(--white); cursor: pointer; flex: 1; font: 700 11px/1.3 var(--font-sans); opacity: .68; padding: 13px 15px; text-align: left; transition: background .2s ease, opacity .2s ease; }
+.featured-carousel-controls button.is-active, .featured-carousel-controls button:hover { background: rgba(255,255,255,.16); opacity: 1; }
+.featured-carousel-controls span { color: #dfb46d; display: block; font: italic 13px Georgia, serif; margin-bottom: 5px; }
 
 .catalog { padding: clamp(96px, 12vw, 170px) clamp(24px, 8vw, 124px); }
 .catalog-heading { align-items: end; display: grid; gap: 50px; grid-template-columns: 1.2fr .8fr; margin-bottom: 72px; }
@@ -310,7 +313,7 @@ footer a { justify-self: end; }
 @media (max-width: 980px) {
   .portal-hero, .catalog-heading, .portal-about, .portal-rio { grid-template-columns: 1fr; }
   .portal-hero { padding-top: 140px; }
-  .featured-disc { justify-self: start; max-width: 580px; }
+  .featured-carousel { min-height: 680px; }
   .song-grid { grid-template-columns: repeat(2, 1fr); }
   .nav { grid-template-columns: 1fr auto; }
   .nav-links { display: none; }
@@ -336,8 +339,10 @@ footer a { justify-self: end; }
   .portal-links a:not(:last-child) { display: none; }
   .portal-hero { min-height: auto; padding-bottom: 80px; }
   .portal-hero h1 { font-size: clamp(58px, 18vw, 88px); }
-  .featured-meta { grid-template-columns: auto 1fr; }
-  .featured-meta small { display: none; }
+  .featured-carousel { min-height: 720px; }
+  .featured-carousel-copy { padding-bottom: 210px; }
+  .featured-carousel-controls { bottom: 30px; display: grid; grid-template-columns: 1fr 1fr; }
+  .featured-carousel-controls button { font-size: 10px; padding: 10px; }
   .song-grid { grid-template-columns: 1fr; }
   .portal-footer { gap: 20px; grid-template-columns: 1fr; text-align: center; }
   .portal-footer .portal-brand, .portal-footer-links { justify-self: center; }

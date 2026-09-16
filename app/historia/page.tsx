@@ -1,3 +1,6 @@
+import SiteFooter from "../components/SiteFooter";
+import SiteHeader from "../components/SiteHeader";
+
 const milestones = [
   { year: "Antes de 1928", title: "Um território vivido", text: "Muito antes das usinas, o vale já era formado por caminhos, fazendas, trabalhos e relações comunitárias. Esta parte da história será ampliada com documentos e relatos locais.", status: "Memória em pesquisa" },
   { year: "1928", title: "A força das águas", text: "É inaugurada a primeira usina hidrelétrica do estado de Mato Grosso, utilizando o potencial do Rio da Casca para levar energia à capital.", source: "https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?id=441551&view=detalhes", sourceLabel: "Acervo do IBGE" },
@@ -9,11 +12,7 @@ const milestones = [
 export default function Historia() {
   return (
     <main>
-      <header className="topbar history-topbar">
-        <a className="brand" href="/" aria-label="Rio da Casca — início"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></a>
-        <nav aria-label="Navegação principal"><a className="active" href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a></nav>
-        <a className="menu-link" href="/">Voltar ao início <span>↗</span></a>
-      </header>
+      <SiteHeader active="historia" />
 
       <section className="history-hero">
         <p className="eyebrow">História e memória · Rio da Casca</p>
@@ -30,8 +29,8 @@ export default function Historia() {
         ))}
       </section>
 
-      <section className="history-callout"><p className="section-index">Acervo comunitário</p><h2>Uma história fica mais inteira quando muitas vozes participam.</h2><p>Você tem fotografias, documentos, mapas ou lembranças do Rio da Casca? Sua contribuição pode ajudar a identificar lugares, pessoas e acontecimentos.</p><a className="button light" href="mailto:contato@riodacasca.com.br?subject=Memória%20do%20Rio%20da%20Casca">Compartilhar uma memória</a></section>
-      <footer><div className="brand footer-brand"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></div><p>Um acervo comunitário dedicado à história, à natureza e às pessoas do Rio da Casca.</p><div className="footer-meta"><span>Chapada dos Guimarães · MT · Brasil</span><span>© 2026 Rio da Casca</span></div></footer>
+      <section className="history-callout"><p className="section-index">Acervo comunitário</p><h2>Uma história fica mais inteira quando muitas vozes participam.</h2><p>Você tem fotografias, documentos, mapas ou lembranças do Rio da Casca? Sua contribuição pode ajudar a identificar lugares, pessoas e acontecimentos.</p><a className="button light" href="/contribua">Compartilhar uma memória</a></section>
+      <SiteFooter />
     </main>
   );
 }

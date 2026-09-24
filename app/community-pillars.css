@@ -1,0 +1,133 @@
+.community-pillars {
+  padding: 120px 7%;
+  color: var(--white);
+  background: var(--forest-deep, #14231b);
+}
+
+.pillars-intro {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 8%;
+  align-items: end;
+  margin-bottom: 75px;
+}
+
+.pillars-intro .section-index {
+  grid-column: 1 / -1;
+  color: #ffffff90;
+}
+
+.pillars-intro h2 {
+  margin: 0;
+  max-width: 850px;
+  font-size: clamp(58px, 7vw, 108px);
+  line-height: .88;
+  letter-spacing: -.045em;
+}
+
+.pillars-intro h2 em {
+  display: block;
+  color: #d8ad69;
+  font-weight: 400;
+}
+
+.pillars-intro > p:last-child {
+  max-width: 560px;
+  margin: 0 0 8px;
+  color: #ffffffbd;
+  font: 400 19px/1.7 var(--font-serif);
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #ffffff35;
+  border-bottom: 1px solid #ffffff35;
+}
+
+.pillar-grid a {
+  position: relative;
+  min-height: 390px;
+  padding: 38px;
+  border-right: 1px solid #ffffff35;
+  transition: background .25s ease, transform .25s ease;
+}
+
+.pillar-grid a:last-child {
+  border-right: 0;
+}
+
+.pillar-grid a:hover {
+  background: #ffffff0d;
+  transform: translateY(-6px);
+}
+
+.pillar-grid span,
+.pillar-grid small {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.pillar-grid span {
+  color: #d8ad69;
+}
+
+.pillar-grid small {
+  float: right;
+  color: #ffffff70;
+}
+
+.pillar-grid h3 {
+  margin: 76px 0 20px;
+  font-size: clamp(39px, 4vw, 62px);
+  font-weight: 400;
+}
+
+.pillar-grid p {
+  max-width: 350px;
+  margin: 0;
+  color: #ffffffad;
+  font: 400 16px/1.65 var(--font-serif);
+}
+
+.pillar-grid b {
+  position: absolute;
+  right: 38px;
+  bottom: 32px;
+  left: 38px;
+  padding-top: 15px;
+  border-top: 1px solid #ffffff30;
+  color: #ffffffc7;
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+}
+
+@media (max-width: 850px) {
+  .community-pillars {
+    padding: 80px 7%;
+  }
+
+  .pillars-intro,
+  .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar-grid a {
+    min-height: 330px;
+    border-right: 0;
+    border-bottom: 1px solid #ffffff35;
+  }
+
+  .pillar-grid a:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar-grid a {
+    transition: none;
+  }
+}

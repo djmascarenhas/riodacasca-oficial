@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 type SiteHeaderProps = {
-  active?: "historia" | "atrativos" | "comunidade" | "acervo" | "guimaraes";
+  active?: "historia" | "atrativos" | "comunidade" | "acervo" | "guimaraes" | "musicas";
 };
 
 const links = [
@@ -10,6 +10,7 @@ const links = [
   ["comunidade", "Comunidade", "/comunidade"],
   ["acervo", "Acervo", "/acervo"],
   ["guimaraes", "Guimarães", "/guimaraes"],
+  ["musicas", "Músicas", "/musicas"],
 ] as const;
 
 export default function SiteHeader({ active }: SiteHeaderProps) {

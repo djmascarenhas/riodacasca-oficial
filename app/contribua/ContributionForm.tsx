@@ -3,40 +3,43 @@
 import { FormEvent, useState } from "react";
 
 export default function ContributionForm() {
-  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  function submitContribution(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = new FormData(event.currentTarget);
+    const subject = `Contribuição para o acervo — ${form.get("titulo")}`;
     const body = [
-      `Nome: ${data.get("name")}`,
-      `E-mail: ${data.get("email")}`,
-      `Tipo de contribuição: ${data.get("type")}`,
-      `Título ou identificação: ${data.get("title")}`,
-      `Data aproximada: ${data.get("date") || "Não informada"}`,
-      `Local: ${data.get("place") || "Não informado"}`,
-      `Link autorizado: ${data.get("link") || "Não informado"}`,
+      `Nome: ${form.get("nome")}`,
+      `Contato: ${form.get("contato")}`,
+      `Tipo de material: ${form.get("tipo")}`,
+      `Título ou identificação: ${form.get("titulo")}`,
+      `Local relacionado: ${form.get("local")}`,
+      `Data ou período: ${form.get("data") || "Não informado"}`,
       "",
       "Descrição:",
-      String(data.get("story")),
+      String(form.get("descricao")),
       "",
-      "Declaro que posso compartilhar estas informações e compreendo que a publicação dependerá de confirmação posterior.",
+      "Origem/autoria e direitos:",
+      String(form.get("origem")),
+      "",
+      "Declaro que estas informações podem ser analisadas pela equipe do portal e que qualquer publicação dependerá de confirmação posterior.",
+      "Se houver arquivos, vou anexá-los manualmente a este e-mail antes de enviar.",
     ].join("\n");
-    setMessage("Mensagem preparada. Seu aplicativo de e-mail será aberto para você revisar e enviar.");
-    window.location.href = `mailto:contato@riodacasca.com.br?subject=${encodeURIComponent(`Contribuição ao acervo — ${data.get("title")}`)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+    window.location.href = `mailto:contato@riodacasca.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
-  return <form className="contribution-form" onSubmit={submit}>
+  return <form className="contribution-form" onSubmit={submitContribution}>
     <p className="section-index">Formulário de contato</p>
-    <div className="field-row"><label>Seu nome<input name="name" autoComplete="name" required /></label><label>Seu e-mail<input name="email" type="email" autoComplete="email" required /></label></div>
-    <label>Tipo de contribuição<select name="type" required defaultValue=""><option value="" disabled>Selecione</option><option>Fotografia</option><option>Documento</option><option>Relato ou memória</option><option>Correção ou identificação</option><option>Lugar ou atrativo</option><option>Outro</option></select></label>
-    <label>Título ou identificação<input name="title" required placeholder="Ex.: fotografia da Usina Casca II" /></label>
-    <div className="field-row"><label>Data aproximada<input name="date" placeholder="Ex.: década de 1950" /></label><label>Local<input name="place" placeholder="Comunidade ou ponto de referência" /></label></div>
-    <label>Conte a história<textarea name="story" required rows={7} placeholder="Quem aparece, o que aconteceu, de onde veio o material…" /></label>
-    <label>Link autorizado para o arquivo <span>(opcional)</span><input name="link" type="url" placeholder="https://…" /></label>
-    <label className="rights-check"><input name="rights" type="checkbox" required /><span>Posso compartilhar estas informações e entendo que a publicação dependerá de confirmação de autoria, contexto e autorização.</span></label>
-    <button className="button" type="submit">Preparar mensagem por e-mail</button>
-    {message && <p className="form-message" role="status">{message}</p>}
-    <noscript>Para contribuir, envie uma mensagem para contato@riodacasca.com.br.</noscript>
+    <div className="field-row"><label>Seu nome<input name="nome" autoComplete="name" required /></label><label>E-mail ou telefone<input name="contato" autoComplete="email" required /></label></div>
+    <div className="field-row"><label>Tipo de contribuição<select name="tipo" required defaultValue=""><option value="" disabled>Selecione</option><option>Fotografia</option><option>Documento</option><option>Mapa ou localização</option><option>Relato ou memória</option><option>Entrevista ou audiovisual</option><option>Observação ambiental</option><option>Correção de informação</option><option>Outro material</option></select></label><label>Título ou identificação<input name="titulo" required placeholder="Ex.: Festa do Cascaju de 1985" /></label></div>
+    <div className="field-row"><label>Local relacionado<input name="local" required placeholder="Comunidade, fazenda, rio ou cachoeira" /></label><label>Data ou período<input name="data" placeholder="Ex.: década de 1970" /></label></div>
+    <label>Conte a história deste material<textarea name="descricao" rows={6} required placeholder="Quem aparece? O que aconteceu? Por que este registro é importante?" /></label>
+    <label>Origem, autoria e direitos<textarea name="origem" rows={4} required placeholder="Informe quem produziu ou guardou o material e se você possui autorização para compartilhá-lo." /></label>
+    <div className="attachment-note"><strong>Arquivos e fotografias</strong><p>Ao concluir, seu aplicativo de e-mail será aberto com os dados organizados. Anexe os arquivos antes de enviar. Prefira imagens originais e não alteradas.</p></div>
+    <label className="rights-check"><input type="checkbox" required /><span>Autorizo a equipe do Rio da Casca a analisar estas informações e entrar em contato. Entendo que nada será publicado sem nova confirmação de contexto, autoria e direitos.</span></label>
+    <button className="button" type="submit">Preparar contribuição</button>
+    {sent && <p className="form-message" role="status">Seu aplicativo de e-mail foi aberto. Revise a mensagem, acrescente os anexos e envie.</p>}
   </form>;
 }

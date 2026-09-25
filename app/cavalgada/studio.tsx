@@ -71,7 +71,7 @@ export default function CavalgadaStudio() {
 
   return <section className="cavalgada-studio" aria-labelledby="studio-title">
     <div className="studio-preview">
-      <img className="studio-base" src={result || "/cavalgada/cavaleiro-base.png"} alt={result ? "Imagem criada para a cavalgada" : "Cavaleiro na estrada do Rio da Casca, com os antigos postes, a usina e a cachoeira ao fundo"} />
+      <img className="studio-base" src={result || "/cavalgada/cavaleiro-base.png"} alt={result ? "Imagem criada para a cavalgada" : "Cartaz da 1ª Cavalgada Guarda-Fios do Rio da Casca, com o cavaleiro em primeiro plano e a paisagem histórica ao fundo"} />
       {!result && photoUrl && <div className="selfie-chip"><img src={photoUrl} alt="Prévia da foto selecionada"/><span>Sua foto selecionada</span></div>}
       {!result && <span className="preview-label">ARTE DE REFERÊNCIA</span>}
       {result && <span className="preview-label">CRIAÇÃO DIGITAL</span>}

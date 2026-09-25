@@ -25,10 +25,10 @@ export async function POST(request: Request) {
     images.append("image[]", art, "cavaleiro-base.png");
     images.append("image[]", photo, photo.name || "selfie.png");
     images.append("prompt", [
-      "Create a photorealistic commemorative image using the first image as the fixed scene and the second image as the identity reference for the foreground rider.",
-      "Change only the visible face of the single foreground rider so it naturally resembles the adult person in the second reference photo.",
-      "Keep the rider's hat, clothing, pose, horse, tack, camera framing, lighting, and every background element from the first image unchanged: the old wooden 34 kV guard-wire poles and insulators, dirt road, forested Morro do Boqueirão, Casca I hydroelectric plant, chalet, and waterfall.",
-      "Preserve the original landscape composition and natural warm color palette. Do not add people, animals, text, logos, or watermarks. Do not reproduce the selfie background. Blend the face realistically with matching scale, lighting, expression, and perspective. This is a clearly commemorative digital montage."
+      "Create a photorealistic commemorative image using the first image as the fixed Cavalgada Guarda-Fios poster and the second image as the identity reference for the prominent foreground rider.",
+      "Change only the visible face of the prominent foreground rider so it naturally resembles the adult person in the second reference photo.",
+      "Keep the rider's hat, clothing, pose, horse, tack, all other riders and horses, camera framing, lighting, and every background element from the first image unchanged: the poster typography and wording, old wooden 34 kV guard-wire poles and insulators, dirt road, forested Morro do Boqueirão, Casca I hydroelectric plant, chalet, and waterfall.",
+      "Preserve the original poster composition, lettering, and natural warm color palette exactly. Do not add or remove people, animals, text, logos, or watermarks. Do not reproduce the selfie background. Blend only the foreground rider's face realistically with matching scale, lighting, expression, and perspective. This is a clearly commemorative digital montage."
     ].join(" "));
 
     const generated = await fetch("https://api.openai.com/v1/images/edits", {

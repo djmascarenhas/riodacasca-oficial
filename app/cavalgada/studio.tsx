@@ -39,6 +39,16 @@ export default function CavalgadaStudio() {
       const data = new FormData();
       data.append("photo", photo);
       const response = await fetch("/api/cavalgada/generate", { method: "POST", body: data });
+      const contentType = response.headers.get("content-type")?.toLowerCase() || "";
+      if (!contentType.includes("application/json")) {
+        if (response.status === 504 || response.status === 524) {
+          throw new Error("O processamento excedeu o tempo limite do servidor. Aguarde um pouco e tente novamente.");
+        }
+        if (response.status === 502 || response.status >= 500) {
+          throw new Error(`O servidor não conseguiu concluir a criação (HTTP ${response.status}). Tente novamente mais tarde.`);
+        }
+        throw new Error(`O servidor retornou uma resposta inesperada (HTTP ${response.status}). Atualize a página e tente novamente.`);
+      }
       const payload = await response.json() as { image?: string; message?: string };
       if (!response.ok || !payload.image) throw new Error(payload.message || "Não foi possível criar a imagem agora. Tente novamente.");
       setResult(`data:image/png;base64,${payload.image}`);

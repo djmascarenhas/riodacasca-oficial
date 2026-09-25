@@ -43,7 +43,13 @@ export async function POST(request: Request) {
     });
     if (!generated.ok) {
       const status = generated.status;
-      console.error("cavalgada.openai_response", { status, requestId: generated.headers.get("x-request-id") });
+      const failure = await generated.json().catch(() => null) as { error?: { code?: string; type?: string } } | null;
+      console.error("cavalgada.openai_response", {
+        status,
+        code: failure?.error?.code,
+        type: failure?.error?.type,
+        requestId: generated.headers.get("x-request-id"),
+      });
       return Response.json({ message: status === 429
         ? "O serviço está ocupado. Aguarde um pouco e tente novamente."
         : status === 401 || status === 403

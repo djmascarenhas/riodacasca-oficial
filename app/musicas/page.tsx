@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import FeaturedCarousel from "./components/FeaturedCarousel";
 
 const artistPlatforms = [
@@ -62,13 +61,8 @@ const catalog = [
   },
 ];
 
-export default async function MusicPortal() {
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "")
-    .split(":")[0]
-    .toLowerCase();
-  const portalBase = host === "musicas.chapada.ia.br" ? "" : "/musicas";
-
+export default function MusicPortal() {
+  const portalBase = "/musicas";
   return (
     <main className="music-site portal">
       <nav className="portal-nav" aria-label="Navegação principal">

@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import SpotifyEmbed from "../components/SpotifyEmbed";
 
 export const metadata = {
@@ -70,13 +69,8 @@ const materials = [
   },
 ];
 
-export default async function ValentimPage() {
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "")
-    .split(":")[0]
-    .toLowerCase();
-  const portalHref = host === "musicas.chapada.ia.br" ? "/" : "/musicas";
-
+export default function ValentimPage() {
+  const portalHref = "/musicas";
   return (
     <main className="music-site">
       <nav className="nav" aria-label="Navegação principal">

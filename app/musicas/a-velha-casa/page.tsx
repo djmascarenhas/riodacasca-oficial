@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import ReleasePage, { type Release } from "../components/ReleasePage";
 
 export const metadata = {
@@ -45,8 +44,6 @@ const release: Release = {
   ],
 };
 
-export default async function Page() {
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "").split(":")[0].toLowerCase();
-  return <ReleasePage release={release} portalHref={host === "musicas.chapada.ia.br" ? "/" : "/musicas"} sharePath="/musicas/a-velha-casa" />;
+export default function Page() {
+  return <ReleasePage release={release} portalHref="/musicas" sharePath="/musicas/a-velha-casa" />;
 }

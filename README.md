@@ -2,7 +2,7 @@
 
 Portal editorial e comunitário dedicado à história, ao território e às pessoas do Rio da Casca, em Chapada dos Guimarães, Mato Grosso.
 
-O mesmo repositório também contém o portal **Músicas de DJ Dalma**, publicado em `musicas.chapada.ia.br`, com a composição “Valentim há de Voltar” e seus materiais de divulgação.
+O mesmo repositório também contém o acervo **Músicas de DJ Dalma**, publicado em `riodacasca.chapada.ia.br/musicas`, com as composições e seus materiais de divulgação.
 
 ## Desenvolvimento
 
@@ -36,12 +36,12 @@ No hPanel, selecione **Websites → Add website → Node.js Web App → Import G
 
 Depois da primeira implantação, conecte o domínio personalizado `riodacasca.chapada.ia.br`. Caso a zona DNS de `chapada.ia.br` esteja fora da Hostinger, crie no provedor de DNS o registro solicitado pelo hPanel.
 
-O subdomínio `musicas.chapada.ia.br` deve apontar para a mesma aplicação. O arquivo `proxy.ts` identifica esse domínio e apresenta o portal musical na raiz, mantendo também as páginas acessíveis em `/musicas` pelo endereço principal.
+O subdomínio `musicas.chapada.ia.br` aponta para a mesma aplicação, mas funciona apenas como atalho. O arquivo `proxy.ts` redireciona permanentemente cada rota musical para o endereço canônico em `riodacasca.chapada.ia.br/musicas`.
 
 Rotas do portal musical:
 
-- `https://musicas.chapada.ia.br/`
-- `https://musicas.chapada.ia.br/valentim-ha-de-voltar`
 - `https://riodacasca.chapada.ia.br/musicas`
+- `https://riodacasca.chapada.ia.br/musicas/valentim-ha-de-voltar`
+- `https://musicas.chapada.ia.br/` → redireciona permanentemente para o acervo
 
 Não adicione senhas, tokens ou arquivos `.env` ao repositório. Variáveis de produção devem ser cadastradas diretamente na Hostinger.

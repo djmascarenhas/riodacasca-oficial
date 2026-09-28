@@ -35,6 +35,15 @@ const catalog = [
     external: "https://music.apple.com/br/album/rio-da-casca-meu-ch%C3%A3o/6789545608?i=6789545740",
   },
   {
+    title: "A Velha Casa",
+    subtitle: "Encontros, amizade e memória do Casca I",
+    image: "/musicas/images/a-velha-casa.jpg",
+    href: "a-velha-casa",
+    status: "Disponível no Spotify",
+    featured: false,
+    external: "https://open.spotify.com/intl-pt/album/45fIPcsI74zrZvIdaNDo5n",
+  },
+  {
     title: "Pedra Rara",
     subtitle: "Uma composição de DJ Dalma",
     image: "/musicas/images/pedra-rara.png",

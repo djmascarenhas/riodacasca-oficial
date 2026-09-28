@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 const slides = [
   { number: "01", title: "Valentim há de Voltar", detail: "Uma história de Mato Grosso", image: "/musicas/og/valentim-ha-de-voltar.png", href: "valentim-ha-de-voltar" },
   { number: "02", title: "Rio da Casca, Meu Chão", detail: "Memória, território e pertencimento", image: "/musicas/og/rio-da-casca-meu-chao.png", href: "rio-da-casca-meu-chao" },
-  { number: "03", title: "Pedra Rara", detail: "Trabalho, busca e descoberta", image: "/musicas/og/pedra-rara.png", href: "pedra-rara" },
-  { number: "04", title: "Joaquina de Mina", detail: "Memória, presença e resistência", image: "/musicas/og/joaquina-de-mina.png", href: "joaquina-de-mina" },
+  { number: "03", title: "A Velha Casa", detail: "Encontros, amizade e memória do Casca I", image: "/musicas/images/a-velha-casa.jpg", href: "a-velha-casa" },
+  { number: "04", title: "Pedra Rara", detail: "Trabalho, busca e descoberta", image: "/musicas/og/pedra-rara.png", href: "pedra-rara" },
+  { number: "05", title: "Joaquina de Mina", detail: "Memória, presença e resistência", image: "/musicas/og/joaquina-de-mina.png", href: "joaquina-de-mina" },
 ];
 
 export default function FeaturedCarousel({ portalBase }: { portalBase: string }) {

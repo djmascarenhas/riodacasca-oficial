@@ -16,6 +16,7 @@ const release: Release = {
   themes: ["Garimpo", "Persistência", "Descoberta", "Memória"],
   listenHref: "https://open.spotify.com/track/4Tes1U92U6cQ0oiowHkw64",
   listenLabel: "Ouvir no Spotify",
+  spotifyHref: "https://open.spotify.com/track/4Tes1U92U6cQ0oiowHkw64",
   listenLinks: [{ label: "Spotify", href: "https://open.spotify.com/track/4Tes1U92U6cQ0oiowHkw64" }, { label: "YouTube Music", href: "https://music.youtube.com/playlist?list=OLAK5uy_mWPTDMsFjjKUU9UHVSBgx1hmdwt9QTukI" }, { label: "Deezer", href: "https://www.deezer.com/album/1042360012" }],
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Rio da Casca, Meu Chão", href: "rio-da-casca-meu-chao" }],
 };

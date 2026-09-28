@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import SpotifyEmbed from "../components/SpotifyEmbed";
 
 export const metadata = {
   title: { absolute: "Valentim há de Voltar | DJ Dalma" },
@@ -39,7 +40,8 @@ const themes = [
 ];
 
 const youtubeMusicHref = "https://music.youtube.com/watch?v=Vs4xX8BRgN4";
-const listeningOptions = [{ label: "YouTube Music", href: youtubeMusicHref }, { label: "Deezer", href: "https://www.deezer.com/album/1039511092" }, { label: "Apple Music", href: "https://music.apple.com/br/album/6795535625" }];
+const spotifyAlbumHref = "https://open.spotify.com/intl-pt/album/2XUDyIZjt03n1BwxlcHcAe";
+const listeningOptions = [{ label: "Spotify", href: spotifyAlbumHref }, { label: "YouTube Music", href: youtubeMusicHref }, { label: "Deezer", href: "https://www.deezer.com/album/1039511092" }, { label: "Apple Music", href: "https://music.apple.com/br/album/6795535625" }];
 
 const materials = [
   {
@@ -87,8 +89,8 @@ export default async function ValentimPage() {
           <a href="#musica">A música</a>
           <a href="#campanha">Campanha</a>
         </div>
-        <a className="nav-cta" href={youtubeMusicHref} target="_blank" rel="noreferrer">
-          Ouvir agora <span aria-hidden="true">↗</span>
+        <a className="nav-cta" href="#musica">
+          Ouvir aqui <span aria-hidden="true">↓</span>
         </a>
       </nav>
 
@@ -104,8 +106,8 @@ export default async function ValentimPage() {
             Uma canção sobre travessia, amor e as raízes que transformam uma promessa em legado.
           </p>
           <div className="hero-actions">
-            <a className="button button-light" href={youtubeMusicHref} target="_blank" rel="noreferrer">
-              <span className="play" aria-hidden="true">▶</span> Ouvir no YouTube Music
+            <a className="button button-light" href="#musica">
+              <span className="play" aria-hidden="true">▶</span> Ouvir aqui
             </a>
             <a className="text-link" href="#historia">Conheça a história <span aria-hidden="true">↓</span></a>
           </div>
@@ -182,8 +184,9 @@ export default async function ValentimPage() {
           <p>
             Mais que uma melodia, um documento sonoro sobre a força dos laços humanos e a capacidade de criar raízes, mesmo diante da saudade e das adversidades.
           </p>
-          <a className="button button-dark" href={youtubeMusicHref} target="_blank" rel="noreferrer">
-            <span className="play" aria-hidden="true">▶</span> Ouvir no YouTube Music
+          <SpotifyEmbed href={spotifyAlbumHref} title="Valentim há de Voltar" />
+          <a className="button button-dark" href={spotifyAlbumHref} target="_blank" rel="noreferrer">
+            <span className="play" aria-hidden="true">▶</span> Abrir no Spotify
           </a>
           <div className="release-platforms" aria-label="Escolha onde ouvir"><span>Escolha onde ouvir</span>{listeningOptions.map((platform) => <a key={platform.href} href={platform.href} target="_blank" rel="noreferrer">{platform.label} <span aria-hidden="true">↗</span></a>)}</div>
           <div className="themes" aria-label="Temas da música">
@@ -236,8 +239,8 @@ export default async function ValentimPage() {
       <section className="final-cta">
         <p className="eyebrow">Uma história para ouvir e guardar</p>
         <h2>Algumas promessas<br />nos trazem de volta.</h2>
-        <a className="button button-light" href={youtubeMusicHref} target="_blank" rel="noreferrer">
-          Ouvir no YouTube Music <span aria-hidden="true">↗</span>
+        <a className="button button-light" href="#musica">
+          Ouvir aqui <span aria-hidden="true">↑</span>
         </a>
       </section>
 

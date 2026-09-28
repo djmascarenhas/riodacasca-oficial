@@ -37,6 +37,7 @@ const release: Release = {
   themes: ["Casca I", "Amizade", "Trabalho", "Memória", "Caju"],
   listenHref: spotifyAlbum,
   listenLabel: "Ouvir no Spotify",
+  spotifyHref: spotifyAlbum,
   listenLinks: [{ label: "Spotify", href: spotifyAlbum }],
   related: [
     { title: "Rio da Casca, Meu Chão", href: "rio-da-casca-meu-chao" },

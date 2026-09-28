@@ -29,6 +29,7 @@ const release: Release = {
   themes: ["Joaquina", "Memória", "Resistência", "Rio da Casca"],
   listenHref: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD",
   listenLabel: "Ouvir no Spotify",
+  spotifyHref: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD",
   listenLinks: [{ label: "Spotify", href: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD" }, { label: "YouTube Music", href: "https://music.youtube.com/playlist?list=OLAK5uy_ly1N51LojiuOWZVGsyNV0j41mWcxczsPg" }, { label: "Deezer", href: "https://www.deezer.com/album/1040923262" }, { label: "Apple Music", href: "https://music.apple.com/br/album/6796288331" }],
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Rio da Casca, Meu Chão", href: "rio-da-casca-meu-chao" }],
 };

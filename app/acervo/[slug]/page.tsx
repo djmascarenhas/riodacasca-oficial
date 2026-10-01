@@ -1,45 +1,34 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { archiveRecords } from "@/app/data/archive";
-
-type Props = { params: Promise<{ slug: string }> };
+import SiteFooter from "../../components/SiteFooter";
+import SiteHeader from "../../components/SiteHeader";
+import { articles } from "../../data/articles";
 
 export function generateStaticParams() {
-  return archiveRecords.map(({ slug }) => ({ slug }));
+  return articles.map((article) => ({ slug: article.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const record = archiveRecords.find((item) => item.slug === slug);
-  if (!record) return {};
-  return {
-    title: record.title,
-    description: record.summary,
-    alternates: { canonical: `/acervo/${record.slug}` },
-    openGraph: { title: `${record.title} | Acervo Rio da Casca`, description: record.summary, url: `/acervo/${record.slug}` },
-  };
+  const article = articles.find((item) => item.slug === slug);
+  return article ? { title: article.title, description: article.excerpt } : {};
 }
 
-export default async function ArchiveRecordPage({ params }: Props) {
+export default async function Registro({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const record = archiveRecords.find((item) => item.slug === slug);
-  if (!record) notFound();
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: record.title,
-    description: record.summary,
-    dateCreated: record.year,
-    spatialCoverage: record.location,
-    isBasedOn: record.sourceUrl,
-    identifier: record.code,
-  };
-
-  return <main className="record-page">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    <header className="topbar archive-topbar"><a className="brand" href="/"><span className="brand-mark">RC</span><span>Rio da Casca<small>memória do território</small></span></a><nav aria-label="Navegação principal"><a href="/historia">História</a><a href="/territorio">Território</a><a href="/comunidade">Comunidade</a><a href="/acervo">Acervo</a><a href="https://musicas.chapada.ia.br/">Músicas</a></nav><a className="menu-link" href="/acervo">Voltar ao acervo <span>↗</span></a></header>
-    <article className="record-detail"><p className="eyebrow">{record.code} · {record.type}</p><h1>{record.title}</h1>{record.image && <figure className="record-image"><Image src={record.image.src} alt={record.image.alt} width={1400} height={900} priority/><figcaption>{record.image.credit}</figcaption></figure>}<p className="record-lead">{record.summary}</p><dl><div><dt>Data ou período</dt><dd>{record.year}</dd></div><div><dt>Local relacionado</dt><dd>{record.location}</dd></div>{record.collection && <div><dt>Coleção</dt><dd>{record.collection}</dd></div>}<div><dt>Estado da informação</dt><dd>{record.status}</dd></div><div><dt>Fonte responsável</dt><dd>{record.source}</dd></div><div><dt>Última revisão</dt><dd>{record.reviewedAt}</dd></div></dl><div className="record-actions"><a className="button" href={record.sourceUrl} target="_blank" rel="noreferrer">Consultar fonte original ↗</a><a className="text-link" href="/contribua">Acrescentar informação →</a></div></article>
-    <section className="record-note"><p className="section-index">Transparência editorial</p><h2>O que este registro representa.</h2><p>Esta página descreve e contextualiza uma fonte pública. O documento original permanece sob responsabilidade da instituição indicada. Correções e informações adicionais podem ser enviadas para análise.</p><a href="/metodologia">Conheça nossa metodologia →</a></section>
+  const article = articles.find((item) => item.slug === slug);
+  if (!article) notFound();
+  const related = articles.filter((item) => item.category === article.category && item.id !== article.id).slice(0, 3);
+  return <main>
+    <SiteHeader active="acervo" />
+    <article className="record-page">
+      <Link className="record-back" href="/acervo">← Voltar ao acervo</Link>
+      <header><p className="eyebrow">{article.category} · {article.year} · RDC-{article.id}</p><h1>{article.title}</h1></header>
+      {article.image && <figure><img src={article.image} alt={article.imageAlt ?? ""}/><figcaption>Imagem vinculada à publicação original do acervo Rio da Casca.</figcaption></figure>}
+      <div className="record-page-copy"><p>{article.excerpt}</p><aside><strong>Sobre este registro</strong><p>Esta ficha organiza o índice do acervo. Para ler o texto integral, conferir créditos e consultar o contexto original, use o link abaixo.</p><a className="button" href={article.sourceUrl} target="_blank" rel="noreferrer">Abrir publicação original ↗</a></aside></div>
+    </article>
+    {related.length > 0 && <section className="record-related"><p className="section-index">Outros registros de {article.category}</p>{related.map((item) => <a href={`/acervo/${item.slug}`} key={item.id}><span>{item.year}</span><strong>{item.title}</strong><b>→</b></a>)}</section>}
+    <SiteFooter />
   </main>;
 }

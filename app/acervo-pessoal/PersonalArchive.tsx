@@ -31,6 +31,21 @@ function matches(record: PhotoRecord, term: string) {
     .join(" ").toLocaleLowerCase("pt-BR").includes(term.toLocaleLowerCase("pt-BR"));
 }
 
+function isPhotoRecord(value: unknown): value is PhotoRecord {
+  if (!value || typeof value !== "object") return false;
+  const record = value as Partial<PhotoRecord>;
+  return typeof record.id === "string"
+    && typeof record.title === "string"
+    && typeof record.photoUrl === "string"
+    && typeof record.year === "string"
+    && typeof record.location === "string"
+    && Array.isArray(record.people) && record.people.every((item) => typeof item === "string")
+    && typeof record.description === "string"
+    && Array.isArray(record.tags) && record.tags.every((item) => typeof item === "string")
+    && ["Em triagem", "Catalogada", "A confirmar"].includes(record.status ?? "")
+    && typeof record.addedAt === "string";
+}
+
 export default function PersonalArchive() {
   const [records, setRecords] = useState<PhotoRecord[]>([]);
   const [form, setForm] = useState<FormData>(emptyForm);
@@ -38,15 +53,32 @@ export default function PersonalArchive() {
   const [year, setYear] = useState("");
   const [location, setLocation] = useState("");
   const [person, setPerson] = useState("");
+  const [storageReady, setStorageReady] = useState(false);
   const [notice, setNotice] = useState("Os registros ficam salvos neste navegador até você exportar ou configurar a base permanente.");
 
   useEffect(() => {
     const saved = window.localStorage.getItem(storageKey);
-    if (!saved) return;
-    try { setRecords(JSON.parse(saved) as PhotoRecord[]); } catch { setNotice("Não foi possível ler a cópia local anterior."); }
+    let restored: PhotoRecord[] | undefined;
+    let readFailed = false;
+    if (saved) {
+      try {
+        const parsed: unknown = JSON.parse(saved);
+        if (!Array.isArray(parsed) || !parsed.every(isPhotoRecord)) throw new Error("Formato inválido");
+        restored = parsed;
+      } catch {
+        readFailed = true;
+      }
+    }
+    queueMicrotask(() => {
+      if (restored) setRecords(restored);
+      if (readFailed) setNotice("Não foi possível ler a cópia local anterior.");
+      setStorageReady(true);
+    });
   }, []);
 
-  useEffect(() => { window.localStorage.setItem(storageKey, JSON.stringify(records)); }, [records]);
+  useEffect(() => {
+    if (storageReady) window.localStorage.setItem(storageKey, JSON.stringify(records));
+  }, [records, storageReady]);
 
   const years = useMemo(() => [...new Set(records.map((record) => record.year).filter(Boolean))].sort(), [records]);
   const locations = useMemo(() => [...new Set(records.map((record) => record.location).filter(Boolean))].sort(), [records]);
@@ -80,8 +112,8 @@ export default function PersonalArchive() {
     const reader = new FileReader();
     reader.onload = () => {
       try {
-        const imported = JSON.parse(String(reader.result)) as PhotoRecord[];
-        if (!Array.isArray(imported)) throw new Error("Formato inválido");
+        const imported: unknown = JSON.parse(String(reader.result));
+        if (!Array.isArray(imported) || !imported.every(isPhotoRecord)) throw new Error("Formato inválido");
         setRecords(imported);
         setNotice(`${imported.length} ficha(s) restaurada(s) no catálogo.`);
       } catch { setNotice("Esse arquivo não parece ser uma cópia válida do catálogo."); }

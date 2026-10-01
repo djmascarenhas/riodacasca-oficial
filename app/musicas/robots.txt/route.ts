@@ -2,8 +2,8 @@ export function GET() {
   const body = [
     "User-agent: *",
     "Allow: /",
-    "Sitemap: https://musicas.chapada.ia.br/sitemap.xml",
-    "Host: https://musicas.chapada.ia.br",
+    "Sitemap: https://riodacasca.chapada.ia.br/musicas/sitemap.xml",
+    "Host: https://riodacasca.chapada.ia.br",
     "",
   ].join("\n");
 

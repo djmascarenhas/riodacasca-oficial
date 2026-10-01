@@ -1,4 +1,4 @@
-import { headers } from "next/headers";
+import FeaturedCarousel from "./components/FeaturedCarousel";
 
 const artistPlatforms = [
   {
@@ -27,11 +27,20 @@ const catalog = [
   {
     title: "Rio da Casca, Meu Chão",
     subtitle: "Memória, território e pertencimento",
-    image: "/musicas/images/joaquina-de-mina.png",
+    image: "/musicas/images/rio-da-casca-meu-chao.png",
     href: "rio-da-casca-meu-chao",
     status: "Disponível na Apple Music",
     featured: false,
     external: "https://music.apple.com/br/album/rio-da-casca-meu-ch%C3%A3o/6789545608?i=6789545740",
+  },
+  {
+    title: "A Velha Casa",
+    subtitle: "Encontros, amizade e memória do Casca I",
+    image: "/musicas/images/a-velha-casa.jpg",
+    href: "a-velha-casa",
+    status: "Disponível no Spotify",
+    featured: false,
+    external: "https://open.spotify.com/intl-pt/album/45fIPcsI74zrZvIdaNDo5n",
   },
   {
     title: "Pedra Rara",
@@ -45,21 +54,15 @@ const catalog = [
   {
     title: "Joaquina de Mina",
     subtitle: "Memória, presença e resistência",
-    image: "/musicas/images/rio-da-casca-meu-chao.png",
+    image: "/musicas/images/joaquina-de-mina.png",
     href: "joaquina-de-mina",
     status: "Conheça a história",
     featured: false,
   },
 ];
 
-export default async function MusicPortal() {
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "")
-    .split(":")[0]
-    .toLowerCase();
-  const portalBase = host === "musicas.chapada.ia.br" ? "" : "/musicas";
-  const compositionHref = `${portalBase}/valentim-ha-de-voltar`;
-
+export default function MusicPortal() {
+  const portalBase = "/musicas";
   return (
     <main className="music-site portal">
       <nav className="portal-nav" aria-label="Navegação principal">
@@ -92,16 +95,9 @@ export default async function MusicPortal() {
             </div>
           </div>
         </div>
-        <a className="featured-disc" href={compositionHref} aria-label="Abrir página de Valentim há de Voltar">
-          <span className="featured-badge">Em destaque</span>
-          <div className="disc-art" />
-          <div className="featured-meta">
-            <span>01</span>
-            <strong>Valentim há de Voltar</strong>
-            <small>Conheça a história →</small>
-          </div>
-        </a>
       </section>
+
+      <FeaturedCarousel portalBase={portalBase} />
 
       <section className="catalog" id="acervo">
         <div className="catalog-heading">
@@ -118,7 +114,7 @@ export default async function MusicPortal() {
           {catalog.map((song, index) => (
             <article className="song-card is-live" key={song.title}>
               <a
-                href={song.featured ? compositionHref : `${portalBase}/${song.href}`}
+                href={`${portalBase}/${song.href}`}
                 aria-label={`${song.title}: ${song.status}`}
               >
                 <div className="song-image" style={{ backgroundImage: `url('${song.image}')` }}>

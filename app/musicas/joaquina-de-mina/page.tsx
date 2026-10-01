@@ -1,11 +1,11 @@
-import { headers } from "next/headers";
 import ReleasePage, { type Release } from "../components/ReleasePage";
 
 export const metadata = {
   title: { absolute: "Joaquina de Mina | DJ Dalma" },
   description: "Uma canção sobre presença, memória e a força de Joaquina na história de Mato Grosso.",
-  alternates: { canonical: "/joaquina-de-mina" },
-  openGraph: { images: ["/musicas/images/joaquina-de-mina.png"] },
+  alternates: { canonical: "/musicas/joaquina-de-mina" },
+  openGraph: { url: "/musicas/joaquina-de-mina", type: "music.song", title: "Joaquina de Mina | DJ Dalma", description: "Uma canção sobre presença, memória e a força de Joaquina na história de Mato Grosso.", images: [{ url: "/musicas/og/joaquina-de-mina.png", width: 1200, height: 630, alt: "Joaquina de Mina, de DJ Dalma" }] },
+  twitter: { card: "summary_large_image", images: ["/musicas/og/joaquina-de-mina.png"] },
 };
 
 const release: Release = {
@@ -26,14 +26,13 @@ const release: Release = {
     { label: "Continuidade", title: "Uma canção que abre conversa", text: "O lançamento é também um convite para reunir lembranças, fontes e interpretações sobre Joaquina e o Rio da Casca." },
   ],
   themes: ["Joaquina", "Memória", "Resistência", "Rio da Casca"],
-  listenHref: "https://somvibe.lnk.to/60OkDeVy",
-  listenLabel: "Ouvir no Smartlink Somvibe",
-  listenLinks: [{ label: "Smartlink Somvibe", href: "https://somvibe.lnk.to/60OkDeVy" }, { label: "Spotify", href: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD" }],
+  listenHref: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD",
+  listenLabel: "Ouvir no Spotify",
+  spotifyHref: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD",
+  listenLinks: [{ label: "Spotify", href: "https://open.spotify.com/intl-pt/track/4334raXNzJesn8WDJT2rYD" }, { label: "YouTube Music", href: "https://music.youtube.com/playlist?list=OLAK5uy_ly1N51LojiuOWZVGsyNV0j41mWcxczsPg" }, { label: "Deezer", href: "https://www.deezer.com/album/1040923262" }, { label: "Apple Music", href: "https://music.apple.com/br/album/6796288331" }],
   related: [{ title: "Valentim há de Voltar", href: "valentim-ha-de-voltar" }, { title: "Rio da Casca, Meu Chão", href: "rio-da-casca-meu-chao" }],
 };
 
-export default async function Page() {
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "").split(":")[0].toLowerCase();
-  return <ReleasePage release={release} portalHref={host === "musicas.chapada.ia.br" ? "/" : "/musicas"} />;
+export default function Page() {
+  return <ReleasePage release={release} portalHref="/musicas" sharePath="/musicas/joaquina-de-mina" />;
 }
